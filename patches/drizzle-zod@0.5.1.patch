@@ -1,0 +1,62 @@
+diff --git a/index.cjs b/index.cjs
+index ae060f4f799bd18432d5b6a2fdec26ad1caee736..9719e6ec7491ee50a89739f297e50b7f4920be19 100644
+--- a/index.cjs
++++ b/index.cjs
+@@ -1,2 +1,2 @@
+-"use strict";var e=require("drizzle-orm"),t=require("drizzle-orm/mysql-core"),r=require("drizzle-orm/pg-core"),n=require("drizzle-orm/sqlite-core"),a=require("zod");const i=a.z.union([a.z.string(),a.z.number(),a.z.boolean(),a.z.null()]),s=a.z.lazy((()=>a.z.union([i,a.z.array(s),a.z.record(s)])));function o(i){let l;if(function(e){return"enumValues"in e&&Array.isArray(e.enumValues)&&e.enumValues.length>0}(i)&&(l=i.enumValues.length?a.z.enum(i.enumValues):a.z.string()),!l)if(e.is(i,r.PgUUID))l=a.z.string().uuid();else if("custom"===i.dataType)l=a.z.any();else if("json"===i.dataType)l=s;else if("array"===i.dataType)l=a.z.array(o(i.baseColumn));else if("number"===i.dataType)l=a.z.number();else if("bigint"===i.dataType)l=a.z.bigint();else if("boolean"===i.dataType)l=a.z.boolean();else if("date"===i.dataType)l=a.z.date();else if("string"===i.dataType){let s=a.z.string();(e.is(i,r.PgChar)||e.is(i,r.PgVarchar)||e.is(i,t.MySqlVarChar)||e.is(i,t.MySqlVarBinary)||e.is(i,t.MySqlChar)||e.is(i,n.SQLiteText))&&"number"==typeof i.length&&(s=s.max(i.length)),l=s}return l||(l=a.z.any()),l}exports.createInsertSchema=function(t,r){const n=e.getTableColumns(t),i=Object.entries(n);let s=Object.fromEntries(i.map((([e,t])=>[e,o(t)])));r&&(s=Object.assign(s,Object.fromEntries(Object.entries(r).map((([e,t])=>[e,"function"==typeof t?t(s):t])))));for(const[e,t]of i)t.notNull?t.hasDefault&&(s[e]=s[e].optional()):s[e]=s[e].nullable().optional();return a.z.object(s)},exports.createSelectSchema=function(t,r){const n=e.getTableColumns(t),i=Object.entries(n);let s=Object.fromEntries(i.map((([e,t])=>[e,o(t)])));r&&(s=Object.assign(s,Object.fromEntries(Object.entries(r).map((([e,t])=>[e,"function"==typeof t?t(s):t])))));for(const[e,t]of i)t.notNull||(s[e]=s[e].nullable());return a.z.object(s)},exports.jsonSchema=s;
++"use strict";var e=require("drizzle-orm"),t=require("drizzle-orm/mysql-core"),r=require("drizzle-orm/pg-core"),n=require("drizzle-orm/sqlite-core"),a=require("@hono/zod-openapi");const i=a.z.union([a.z.string(),a.z.number(),a.z.boolean(),a.z.null()]),s=a.z.lazy((()=>a.z.union([i,a.z.array(s),a.z.record(s)])));function o(i){let l;if(function(e){return"enumValues"in e&&Array.isArray(e.enumValues)&&e.enumValues.length>0}(i)&&(l=i.enumValues.length?a.z.enum(i.enumValues):a.z.string()),!l)if(e.is(i,r.PgUUID))l=a.z.string().uuid();else if("custom"===i.dataType)l=a.z.any();else if("json"===i.dataType)l=s;else if("array"===i.dataType)l=a.z.array(o(i.baseColumn));else if("number"===i.dataType)l=a.z.number();else if("bigint"===i.dataType)l=a.z.bigint();else if("boolean"===i.dataType)l=a.z.boolean();else if("date"===i.dataType)l=a.z.date();else if("string"===i.dataType){let s=a.z.string();(e.is(i,r.PgChar)||e.is(i,r.PgVarchar)||e.is(i,t.MySqlVarChar)||e.is(i,t.MySqlVarBinary)||e.is(i,t.MySqlChar)||e.is(i,n.SQLiteText))&&"number"==typeof i.length&&(s=s.max(i.length)),l=s}return l||(l=a.z.any()),l}exports.createInsertSchema=function(t,r){const n=e.getTableColumns(t),i=Object.entries(n);let s=Object.fromEntries(i.map((([e,t])=>[e,o(t)])));r&&(s=Object.assign(s,Object.fromEntries(Object.entries(r).map((([e,t])=>[e,"function"==typeof t?t(s):t])))));for(const[e,t]of i)t.notNull?t.hasDefault&&(s[e]=s[e].optional()):s[e]=s[e].nullable().optional();return a.z.object(s)},exports.createSelectSchema=function(t,r){const n=e.getTableColumns(t),i=Object.entries(n);let s=Object.fromEntries(i.map((([e,t])=>[e,o(t)])));r&&(s=Object.assign(s,Object.fromEntries(Object.entries(r).map((([e,t])=>[e,"function"==typeof t?t(s):t])))));for(const[e,t]of i)t.notNull||(s[e]=s[e].nullable());return a.z.object(s)},exports.jsonSchema=s;
+ //# sourceMappingURL=index.cjs.map
+diff --git a/index.d.cts b/index.d.cts
+index d956d8aaeb988e54bea96e351cd8f192d6cf108a..823a8df89cdae2d1ab0b3d5fa1cc00495570c758 100644
+--- a/index.d.cts
++++ b/index.d.cts
+@@ -1,5 +1,5 @@
+ import { type Assume, type Column, type DrizzleTypeError, type Equal, type Simplify, type Table } from 'drizzle-orm';
+-import { z } from 'zod';
++import { z } from '@hono/zod-openapi';
+ declare const literalSchema: z.ZodUnion<[z.ZodString, z.ZodNumber, z.ZodBoolean, z.ZodNull]>;
+ type Literal = z.infer<typeof literalSchema>;
+ type Json = Literal | {
+diff --git a/index.d.mts b/index.d.mts
+index d956d8aaeb988e54bea96e351cd8f192d6cf108a..823a8df89cdae2d1ab0b3d5fa1cc00495570c758 100644
+--- a/index.d.mts
++++ b/index.d.mts
+@@ -1,5 +1,5 @@
+ import { type Assume, type Column, type DrizzleTypeError, type Equal, type Simplify, type Table } from 'drizzle-orm';
+-import { z } from 'zod';
++import { z } from '@hono/zod-openapi';
+ declare const literalSchema: z.ZodUnion<[z.ZodString, z.ZodNumber, z.ZodBoolean, z.ZodNull]>;
+ type Literal = z.infer<typeof literalSchema>;
+ type Json = Literal | {
+diff --git a/index.d.ts b/index.d.ts
+index d956d8aaeb988e54bea96e351cd8f192d6cf108a..823a8df89cdae2d1ab0b3d5fa1cc00495570c758 100644
+--- a/index.d.ts
++++ b/index.d.ts
+@@ -1,5 +1,5 @@
+ import { type Assume, type Column, type DrizzleTypeError, type Equal, type Simplify, type Table } from 'drizzle-orm';
+-import { z } from 'zod';
++import { z } from '@hono/zod-openapi';
+ declare const literalSchema: z.ZodUnion<[z.ZodString, z.ZodNumber, z.ZodBoolean, z.ZodNull]>;
+ type Literal = z.infer<typeof literalSchema>;
+ type Json = Literal | {
+diff --git a/index.mjs b/index.mjs
+index 581a158b8221958760d70b2c93b29f9c9b5b6871..b7f69b7dd58fc7d3b595bdb5ee173a06a08e9038 100644
+--- a/index.mjs
++++ b/index.mjs
+@@ -1,2 +1,2 @@
+-import{getTableColumns as e,is as t}from"drizzle-orm";import{MySqlVarChar as n,MySqlVarBinary as r,MySqlChar as o}from"drizzle-orm/mysql-core";import{PgUUID as i,PgChar as a,PgVarchar as l}from"drizzle-orm/pg-core";import{SQLiteText as s}from"drizzle-orm/sqlite-core";import{z as u}from"zod";const m=u.union([u.string(),u.number(),u.boolean(),u.null()]),f=u.lazy((()=>u.union([m,u.array(f),u.record(f)])));function c(t,n){const r=e(t),o=Object.entries(r);let i=Object.fromEntries(o.map((([e,t])=>[e,p(t)])));n&&(i=Object.assign(i,Object.fromEntries(Object.entries(n).map((([e,t])=>[e,"function"==typeof t?t(i):t])))));for(const[e,t]of o)t.notNull?t.hasDefault&&(i[e]=i[e].optional()):i[e]=i[e].nullable().optional();return u.object(i)}function b(t,n){const r=e(t),o=Object.entries(r);let i=Object.fromEntries(o.map((([e,t])=>[e,p(t)])));n&&(i=Object.assign(i,Object.fromEntries(Object.entries(n).map((([e,t])=>[e,"function"==typeof t?t(i):t])))));for(const[e,t]of o)t.notNull||(i[e]=i[e].nullable());return u.object(i)}function p(e){let m;if(function(e){return"enumValues"in e&&Array.isArray(e.enumValues)&&e.enumValues.length>0}(e)&&(m=e.enumValues.length?u.enum(e.enumValues):u.string()),!m)if(t(e,i))m=u.string().uuid();else if("custom"===e.dataType)m=u.any();else if("json"===e.dataType)m=f;else if("array"===e.dataType)m=u.array(p(e.baseColumn));else if("number"===e.dataType)m=u.number();else if("bigint"===e.dataType)m=u.bigint();else if("boolean"===e.dataType)m=u.boolean();else if("date"===e.dataType)m=u.date();else if("string"===e.dataType){let i=u.string();(t(e,a)||t(e,l)||t(e,n)||t(e,r)||t(e,o)||t(e,s))&&"number"==typeof e.length&&(i=i.max(e.length)),m=i}return m||(m=u.any()),m}export{c as createInsertSchema,b as createSelectSchema,f as jsonSchema};
++import{getTableColumns as e,is as t}from"drizzle-orm";import{MySqlVarChar as n,MySqlVarBinary as r,MySqlChar as o}from"drizzle-orm/mysql-core";import{PgUUID as i,PgChar as a,PgVarchar as l}from"drizzle-orm/pg-core";import{SQLiteText as s}from"drizzle-orm/sqlite-core";import{z as u}from"@hono/zod-openapi";const m=u.union([u.string(),u.number(),u.boolean(),u.null()]),f=u.lazy((()=>u.union([m,u.array(f),u.record(f)])));function c(t,n){const r=e(t),o=Object.entries(r);let i=Object.fromEntries(o.map((([e,t])=>[e,p(t)])));n&&(i=Object.assign(i,Object.fromEntries(Object.entries(n).map((([e,t])=>[e,"function"==typeof t?t(i):t])))));for(const[e,t]of o)t.notNull?t.hasDefault&&(i[e]=i[e].optional()):i[e]=i[e].nullable().optional();return u.object(i)}function b(t,n){const r=e(t),o=Object.entries(r);let i=Object.fromEntries(o.map((([e,t])=>[e,p(t)])));n&&(i=Object.assign(i,Object.fromEntries(Object.entries(n).map((([e,t])=>[e,"function"==typeof t?t(i):t])))));for(const[e,t]of o)t.notNull||(i[e]=i[e].nullable());return u.object(i)}function p(e){let m;if(function(e){return"enumValues"in e&&Array.isArray(e.enumValues)&&e.enumValues.length>0}(e)&&(m=e.enumValues.length?u.enum(e.enumValues):u.string()),!m)if(t(e,i))m=u.string().uuid();else if("custom"===e.dataType)m=u.any();else if("json"===e.dataType)m=f;else if("array"===e.dataType)m=u.array(p(e.baseColumn));else if("number"===e.dataType)m=u.number();else if("bigint"===e.dataType)m=u.bigint();else if("boolean"===e.dataType)m=u.boolean();else if("date"===e.dataType)m=u.date();else if("string"===e.dataType){let i=u.string();(t(e,a)||t(e,l)||t(e,n)||t(e,r)||t(e,o)||t(e,s))&&"number"==typeof e.length&&(i=i.max(e.length)),m=i}return m||(m=u.any()),m}export{c as createInsertSchema,b as createSelectSchema,f as jsonSchema};
+ //# sourceMappingURL=index.mjs.map
+diff --git a/package.json b/package.json
+index df6e47325211ad70e9a67ec430c4ecc7c9127e8a..cb429c38635a78ae6776f4aee7b86274ccf03d6a 100644
+--- a/package.json
++++ b/package.json
+@@ -81,6 +81,8 @@
+     "rollup": "^3.20.7",
+     "tsx": "^3.12.2",
+     "zod": "^3.20.2",
++    "hono": "^4.5.11",
++    "@hono/zod-openapi": "^0.16.0",
+     "zx": "^7.2.2"
+   }
+ }

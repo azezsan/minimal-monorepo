@@ -17,5 +17,8 @@
     "workspaces": [
         "apps/*",
         "packages/*"
-    ]
+    ],
+    "patchedDependencies": {
+        "drizzle-zod@0.5.1": "patches/drizzle-zod@0.5.1.patch"
+    }
 }

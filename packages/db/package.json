@@ -1,0 +1,23 @@
+{
+    "name": "@acme/db",
+    "private": true,
+    "main": "./src/index.ts",
+    "scripts": {
+        "generate": "drizzle-kit generate",
+        "migrate": "bun run src/migrate.ts",
+        "studio": "drizzle-kit studio"
+    },
+    "dependencies": {
+        "@hono/zod-openapi": "^0.16.4",
+        "@libsql/client": "^0.8.1",
+        "drizzle-orm": "^0.32.2",
+        "drizzle-zod": "^0.5.1"
+    },
+    "devDependencies": {
+        "@clack/prompts": "^0.7.0",
+        "@cloudflare/workers-types": "^4.20241011.0",
+        "better-sqlite3": "^11.3.0",
+        "drizzle-kit": "^0.23.2",
+        "wrangler": "^3.80.4"
+    }
+}
