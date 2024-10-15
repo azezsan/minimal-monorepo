@@ -2,6 +2,7 @@
 
 # dependencies
 node_modules
+.wrangler
 .pnp
 .pnp.js
 
@@ -38,8 +39,5 @@ apps/*/.env*
 # turbo
 .turbo
 .vercel
-
-# wrangler
-**/wrangler.toml
 
 v3
