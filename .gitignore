@@ -1,0 +1,45 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# testing
+coverage
+
+# svelte
+.svelte-kit
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*
+!.env.example
+!.env.test
+
+# packages env files
+packages/*/.env*
+!packages/*/.env.example
+!packages/*/.env.test
+
+# apps env files
+apps/*/.env*
+!apps/*/.env.example
+!apps/*/.env.test
+
+# turbo
+.turbo
+.vercel
+
+# wrangler
+**/wrangler.toml
+
+v3
