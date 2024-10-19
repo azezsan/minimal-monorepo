@@ -1,3 +1,4 @@
+import { dev } from "$app/environment";
 import type { RequestEvent } from "@sveltejs/kit";
 
 export const sessionCookieName = 'auth-session';
@@ -7,15 +8,11 @@ export function setSessionTokenCookie(event: RequestEvent, token: string, expire
         httpOnly: true,
         sameSite: "lax",
         expires: expiresAt,
-        path: "/"
+        path: "/",
+        secure: !dev
     });
 }
 
 export function deleteSessionTokenCookie(event: RequestEvent): void {
-    event.cookies.set(sessionCookieName, "", {
-        httpOnly: true,
-        sameSite: "lax",
-        maxAge: 0,
-        path: "/"
-    });
+    event.cookies.delete(sessionCookieName, { path: '/' });
 }
