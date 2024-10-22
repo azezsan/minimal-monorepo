@@ -1,7 +1,17 @@
 {
-  "name": "api",
+  "name": "@acme/api",
+  "exports": {
+    "./hc": {
+      "import": {
+        "default": "./dist/hc.js",
+        "types": "./dist/hc.d.ts"
+      }
+    }
+  },
   "scripts": {
-    "dev": "wrangler dev",
+    "dev": "bun run ./bun.ts",
+    "dev:tsc": "tsc -p tsconfig.build.json --watch",
+    "dev:wrangler": "wrangler dev src/index.ts --persist-to ../../",
     "deploy": "wrangler deploy --minify",
     "cf-typegen": "wrangler types --env-interface CloudflareBindings"
   },
