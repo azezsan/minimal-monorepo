@@ -1,0 +1,8 @@
+{
+    "name": "@acme/rpc",
+    "private": true,
+    "main": "./src/index.ts",
+    "dependencies": {
+        "@acme/api": "workspace:*"
+    }
+}

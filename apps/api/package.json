@@ -1,0 +1,26 @@
+{
+  "name": "@acme/api",
+  "exports": {
+    "./hc": {
+      "import": {
+        "default": "./dist/hc.js",
+        "types": "./dist/hc.d.ts"
+      }
+    }
+  },
+  "scripts": {
+    "dev": "bun run ./bun.ts",
+    "dev:tsc": "tsc -p tsconfig.build.json --watch",
+    "dev:wrangler": "wrangler dev src/index.ts --persist-to ../../",
+    "build": "tsc -p tsconfig.build.json",
+    "deploy": "wrangler deploy --minify",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+  },
+  "dependencies": {
+    "hono": "^4.6.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241018.0",
+    "wrangler": "^3.81.0"
+  }
+}
