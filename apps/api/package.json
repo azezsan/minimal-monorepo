@@ -12,6 +12,7 @@
     "dev": "bun run ./bun.ts",
     "dev:tsc": "tsc -p tsconfig.build.json --watch",
     "dev:wrangler": "wrangler dev src/index.ts --persist-to ../../",
+    "build": "tsc -p tsconfig.build.json",
     "deploy": "wrangler deploy --minify",
     "cf-typegen": "wrangler types --env-interface CloudflareBindings"
   },
