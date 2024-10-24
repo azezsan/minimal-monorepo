@@ -9,14 +9,14 @@ export function generateSessionToken(): string {
     return token;
 }
 
-export async function createSession(token: string, userId: number, kv: KVNamespace): Promise<string> {
+export async function createSession(token: string, userId: number, kv: KVNamespace): Promise<{ sessionId: string, session: Session }> {
     const sessionId = encodeHexLowerCase(sha256(new TextEncoder().encode(token)));
     const session: Session = {
         userId,
         expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 24 * 30)
     }
     await kv.put(sessionId, JSON.stringify(session), { expirationTtl: 1000 * 60 * 60 * 24 * 30 })
-    return sessionId;
+    return { sessionId, session };
 }
 
 export async function validateSessionToken(token: string, kv: KVNamespace): Promise<SessionValidationResult> {
