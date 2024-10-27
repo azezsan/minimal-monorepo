@@ -1,6 +1,5 @@
 import { encodeBase32LowerCaseNoPadding, encodeHexLowerCase } from "@oslojs/encoding";
 import { sha256 } from "@oslojs/crypto/sha2";
-import type { KVNamespace } from "@cloudflare/workers-types";
 
 export type SessionValidationResult =
     | { sessionId: string; session: Session }
@@ -8,7 +7,7 @@ export type SessionValidationResult =
 
 export type Session = {
     userId: number,
-    expiresAt: Date
+    expiresAt: Date | string
 }
 
 export class SessionStore {
@@ -44,7 +43,7 @@ export class SessionStore {
             expiresAt: result.expiresAt
         }
 
-        if (Date.now() >= session.expiresAt.getTime() - 1000 * 60 * 60 * 24 * 15) {
+        if (Date.now() >= new Date(session.expiresAt).getTime() - 1000 * 60 * 60 * 24 * 15) {
             session.expiresAt = new Date(Date.now() + 1000 * 60 * 60 * 24 * 30)
             await this.kv.put(sessionId, JSON.stringify(session), { expirationTtl: 1000 * 60 * 60 * 24 * 30 })
         }
