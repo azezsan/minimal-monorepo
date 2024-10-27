@@ -3,7 +3,10 @@
 declare global {
 	namespace App {
 		// interface Error {}
-		// interface Locals {}
+		interface Locals {
+			db: import("@acme/db").DrizzleD1Database<typeof import("@acme/db").schema>
+			session: import("@acme/auth").Session | null
+		}
 		// interface PageData {}
 		// interface PageState {}
 		interface Platform {

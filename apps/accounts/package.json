@@ -14,6 +14,8 @@
 		"cf-typegen": "wrangler types && mv worker-configuration.d.ts src/"
 	},
 	"devDependencies": {
+		"@acme/auth": "workspace:*",
+		"@acme/db": "workspace:*",
 		"@cloudflare/workers-types": "^4.20241022.0",
 		"@sveltejs/adapter-cloudflare": "^4.7.3",
 		"@sveltejs/kit": "^2.0.0",
@@ -35,6 +37,7 @@
 		"wrangler": "^3.82.0"
 	},
 	"dependencies": {
-		"@inlang/paraglide-sveltekit": "^0.11.1"
+		"@inlang/paraglide-sveltekit": "^0.11.1",
+		"nanoid": "^5.0.7"
 	}
 }
