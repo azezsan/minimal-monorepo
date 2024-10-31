@@ -1,0 +1,11 @@
+{
+    "name": "@acme/ui",
+    "private": true,
+    "devDependencies": {
+        "bits-ui": "0.21.16",
+        "clsx": "^2.1.1",
+        "tailwind-merge": "^2.5.4",
+        "tailwind-variants": "^0.2.1",
+        "tailwindcss-animate": "^1.0.7"
+    }
+}
