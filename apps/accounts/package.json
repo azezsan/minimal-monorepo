@@ -17,6 +17,7 @@
 		"@acme/auth": "workspace:*",
 		"@acme/db": "workspace:*",
 		"@acme/ui": "workspace:*",
+		"@acme/rpc": "workspace:*",
 		"@cloudflare/workers-types": "^4.20241022.0",
 		"@sveltejs/adapter-cloudflare": "^4.7.3",
 		"@sveltejs/kit": "^2.0.0",

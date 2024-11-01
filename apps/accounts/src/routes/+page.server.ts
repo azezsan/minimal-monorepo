@@ -1,12 +1,14 @@
-import { eq, usersTable } from '@acme/db';
 import { redirect } from '@sveltejs/kit';
+import { api } from '@acme/rpc';
 
 export const load = async (event) => {
     if (!event.locals.session) {
         redirect(302, "/login");
     }
 
+    event.locals.session?.userId
+
     return {
-        user: await event.locals.db.select().from(usersTable).where(eq(usersTable.id, event.locals.session?.userId)).get()
+        user: await api.users[':id'].$get({ param: { id: event.locals.session.userId.toString() } }).then((r) => r.json()),
     }
 };
