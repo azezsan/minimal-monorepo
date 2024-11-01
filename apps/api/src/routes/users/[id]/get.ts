@@ -35,11 +35,7 @@ export default new OpenAPIHono<{ Bindings: CloudflareBindings }>()
         }
     }, async (c) => {
         const { id } = c.req.valid('param')
-
         const db = initializeD1(c.env.DB) // Cloudflare D1 database
-
         const results = await db.select().from(usersTable).where(eq(usersTable.id, Number(id))).get()
-
         return c.json(results)
-    }
-    )
+    })

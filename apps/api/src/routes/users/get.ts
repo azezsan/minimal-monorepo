@@ -20,9 +20,6 @@ export default new OpenAPIHono<{ Bindings: CloudflareBindings }>()
         }
     }, async (c) => {
         const db = initializeD1(c.env.DB) // Cloudflare D1 database
-
         const results = await db.select().from(usersTable).all()
-
         return c.json(results)
-    }
-    )
+    })
