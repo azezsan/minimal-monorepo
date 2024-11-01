@@ -1,0 +1,19 @@
+{
+    "name": "@acme/ui",
+    "private": true,
+    "exports": {
+        "./app.css": "./src/app.css",
+        "./postcss.config": "./postcss.config.mjs",
+        "./tailwind.config": "./tailwind.config.ts",
+        "./lib/*": "./src/lib/*",
+        "./lib/components/ui/*": "./src/lib/components/ui/*/index.ts"
+    },
+    "devDependencies": {
+        "bits-ui": "^1.0.0-next.35",
+        "clsx": "^2.1.1",
+        "svelte": "^5.1.9",
+        "tailwind-merge": "^2.5.4",
+        "tailwind-variants": "^0.2.1",
+        "tailwindcss-animate": "^1.0.7"
+    }
+}

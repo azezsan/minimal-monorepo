@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "baseUrl": ".",
+        "paths": {
+            "@acme/ui/*": [
+                "./src/*"
+            ]
+        }
+    }
+}
