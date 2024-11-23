@@ -6,10 +6,10 @@
         "@acme/db": "workspace:*",
         "@oslojs/crypto": "^1.0.1",
         "@oslojs/encoding": "^1.1.0",
-        "arctic": "^2.0.1"
+        "arctic": "^2.2.2"
     },
     "devDependencies": {
-        "@cloudflare/workers-types": "^4.20241022.0",
-        "@sveltejs/kit": "^2.7.2"
+        "@cloudflare/workers-types": "^4.20241112.0",
+        "@sveltejs/kit": "^2.8.2"
     }
 }
