@@ -14,16 +14,14 @@ export async function GET(event: RequestEvent): Promise<Response> {
     const state = event.url.searchParams.get("state");
     const storedState = event.cookies.get("google_oauth_state") ?? null;
     const codeVerifier = event.cookies.get("google_code_verifier") ?? null;
-    if (code === null || state === null || storedState === null || codeVerifier === null) {
+    if (!code || !state || !storedState || !codeVerifier || state !== storedState) {
         return new Response(null, {
             status: 400
         });
     }
-    if (state !== storedState) {
-        return new Response(null, {
-            status: 400
-        });
-    }
+
+    event.cookies.delete("google_oauth_state", { path: "/" });
+    event.cookies.delete("google_code_verifier", { path: "/" });
 
     let tokens: OAuth2Tokens;
     const google = createGoogleProvider(
