@@ -6,8 +6,6 @@ export const load = async (event) => {
         redirect(302, "/login");
     }
 
-    event.locals.session?.userId
-
     return {
         user: await api.users[':id'].$get({ param: { id: event.locals.session.userId.toString() } }).then((r) => r.json()),
     }
