@@ -6,6 +6,7 @@
         "declarationMap": true
     },
     "include": [
-        "src/hc.ts"
+        "src/hc.ts",
+        "./worker-configuration.d.ts"
     ],
 }
