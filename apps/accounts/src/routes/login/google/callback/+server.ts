@@ -1,6 +1,6 @@
 import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from "$env/static/private";
 import { createGoogleProvider, initializeSessionStore, setSessionTokenCookie } from "@acme/auth";
-import { usersTable, oauthAccountsTable, eq, sql } from "@acme/db"
+import { usersTable, oauthAccountsTable, eq, sql, initializeD1 } from "@acme/db"
 import { decodeIdToken } from "arctic"
 
 import type { RequestEvent } from "@sveltejs/kit";
@@ -43,8 +43,7 @@ export async function GET(event: RequestEvent): Promise<Response> {
     const claims = decodeIdToken(tokens.idToken()) as GoogleUserClaims;
 
     // TODO: Replace this with your own DB query.
-    const insertedUser = await upsertUser(claims, event.locals.db);
-
+    const insertedUser = await upsertUser(claims, initializeD1(event.platform?.env.DB!));
 
     const sessionStore = initializeSessionStore(event.platform?.env.sessions!)
 

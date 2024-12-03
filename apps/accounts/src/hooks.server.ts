@@ -1,6 +1,5 @@
 import type { Handle } from '@sveltejs/kit';
 import { i18n } from '$lib/i18n';
-import { initializeD1 } from '@acme/db';
 import { deleteSessionTokenCookie, initializeSessionStore, sessionCookieName, setSessionTokenCookie } from '@acme/auth';
 import { sequence } from '@sveltejs/kit/hooks';
 
@@ -10,8 +9,6 @@ const handleAuth: Handle = async ({ event, resolve }) => {
     if (!event.platform) {
         return resolve(event);
     }
-
-    event.locals.db = initializeD1(event.platform.env.DB)
 
     const sessionToken = event.cookies.get(sessionCookieName) ?? null;
     if (!sessionToken) {
