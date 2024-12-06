@@ -26,7 +26,9 @@ db/
 ## Component Details
 
 ### Database Connection (`src/db.ts`)
-Contains the database connection configuration and client setup. This is where we initialize our connection to the database using Drizzle ORM.
+Contains the database connection configuration. it exports the function `initializeD1` which expects a Cloudflare D1 binding to be initalized
+
+visit https://developers.cloudflare.com/workers/runtime-apis/bindings to learn more about bindings
 
 
 ### Migrations (`src/drizzle/`)
@@ -93,7 +95,9 @@ bun run migrate
 ### 3. Using Tables in Your Application
 
 ```typescript
-import { db, usersTable } from '@acme/db';
+import { initializeD1, usersTable } from '@acme/db';
+
+const db = initializeD1(env.D1Database) // this part depends on what framework you're using
 
 // Query examples
 const allUsers = await db.select().from(usersTable).all();
