@@ -26,7 +26,9 @@ export default {
   out: "./drizzle",
   schema: "./src/schema/index.ts",
   strict: true,
-  dbCredentials: {
-    url: getLocalD1DB()
-  }
+  ...(process.argv[2] === "studio" ? {
+    dbCredentials: {
+      url: getLocalD1DB()
+    }
+  } : {})
 } satisfies Config;
