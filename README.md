@@ -7,7 +7,7 @@ We use a combination of Svelte (SvelteKit), TypeScript, Drizzle (ORM), Cloudflar
 ### Apps:
 
 - `accounts`: A [Sveltekit](https://svelte.dev/) web app with a minimal Google OAuth exmaple.
-- `api`: A [Hono](https://hono.dev/) api app, with a minimal user managment endpoints .
+- `api`: A [Hono](https://hono.dev/) server, with a minimal user managment endpoints .
 
 ### Packages:
 
