@@ -7,7 +7,9 @@ Contains helpful lucia functions
 
 ###  `session.ts`
 
-Contains session store class which is respossible for managing the user's sessions while storing them in Cloudflare Workers KV, it expects the KVNamespace to be initilized 
+Contains session store class which is respossible for managing the user's sessions it exports the function `initializeSessionStore` which expects a Cloudflare KV binding to be initilized
+
+visit https://developers.cloudflare.com/workers/runtime-apis/bindings to learn more about bindings
 
 ### `oauth.ts`
 
