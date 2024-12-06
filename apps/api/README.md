@@ -1,8 +1,3 @@
-```
-npm install
-npm run dev
-```
+# Hono Server
 
-```
-npm run deploy
-```
+Contains a server with rest endpoints to manage users accounts in the database.
