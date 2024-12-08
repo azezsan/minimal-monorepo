@@ -1,10 +1,10 @@
-import { createInsertSchema, createSelectSchema } from "drizzle-zod"
-import type { z } from "zod"
+import { createInsertSchema, createSelectSchema } from "drizzle-zod";
+import type { z } from "zod";
 
 import { oauthAccountsTable } from "./oauthAccounts";
 
-export const oauthAccountsInsertSchema = createInsertSchema(oauthAccountsTable);
-export const oauthAccountsSelectSchema = createSelectSchema(oauthAccountsTable);
+export const insertOauthAccountSchema = createInsertSchema(oauthAccountsTable);
+export const selectOauthAccountSchema = createSelectSchema(oauthAccountsTable);
 
-export type OAuthAccountsInsert = z.infer<typeof oauthAccountsInsertSchema>;
-export type OAuthAccounts = z.infer<typeof oauthAccountsSelectSchema>;
+export type InsertOauthAccount = z.infer<typeof insertOauthAccountSchema>;
+export type OauthAccount = z.infer<typeof selectOauthAccountSchema>;
