@@ -5,7 +5,8 @@
     "scripts": {
         "generate": "drizzle-kit generate",
         "migrate": "bun run src/migrate.ts",
-        "studio": "drizzle-kit studio"
+        "studio": "drizzle-kit studio",
+        "codegen": "bun run src/codegen.ts"
     },
     "dependencies": {
         "@hono/zod-openapi": "^0.18.0",
