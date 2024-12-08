@@ -8,7 +8,7 @@ we also want to avoid having apps adding each other to dependencies directly at 
 
 ## Usage
 
-this package simply exports the RPC after being complied from `@acme/api` 
+this package simply exports the RPC after being compiled from `@acme/api` 
 
 to use it just add this package and import the RPC inside your app and access any endpoint created inside the hono server like so
 
