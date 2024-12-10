@@ -1,5 +1,5 @@
 import { createSchemaFactory } from "drizzle-typebox";
-import { t, Static } from "elysia";
+import { t, type Static } from "elysia";
 
 import { usersTable } from "./users";
 

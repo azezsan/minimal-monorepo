@@ -22,7 +22,7 @@ async function generateValidationFile(folderPath: string, tableName: string): Pr
     const singularName = tableName.endsWith('s') ? tableName.slice(0, -1) : tableName;
     
     const content = `import { createSchemaFactory } from "drizzle-typebox";
-import { t, Static } from "elysia";
+import { t, type Static } from "elysia";
 
 import { ${tableName}Table } from "./${tableName}";
 
