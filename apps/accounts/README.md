@@ -1,3 +1,9 @@
-# Accounts Web App
+# Accounts App
 
-contains a OAuth authentication exmaple using Google OAuth with Lucia.
+SvelteKit OAuth example.
+
+## Development
+```bash
+bun run dev      # Start dev server
+bun run deploy   # Deploy to Workers
+```

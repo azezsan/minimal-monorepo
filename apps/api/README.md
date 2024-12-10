@@ -1,15 +1,11 @@
-# Elysia with Bun runtime
+# API Server
 
-## Getting Started
-To get started with this template, simply paste this command into your terminal:
-```bash
-bun create elysia ./elysia-example
-```
+Elysia API server.
+
+
 
 ## Development
-To start the development server run:
 ```bash
-bun run dev
+bun run dev      # Start dev server
+bun run deploy   # Deploy to Workers
 ```
-
-Open http://localhost:3000/ with your browser to see the result.
