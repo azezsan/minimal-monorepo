@@ -1,4 +1,4 @@
-import { redirect } from '@sveltejs/kit';
+import { redirect, error as err } from '@sveltejs/kit';
 import { api } from '@acme/rpc';
 
 export const load = async (event) => {
@@ -7,6 +7,8 @@ export const load = async (event) => {
     }
 
     return {
-        user: await api.users[':id'].$get({ param: { id: event.locals.session.userId.toString() } }).then((r) => r.json()),
+        user: await api.users[event.locals.session.userId].get().then(
+            ({ data, error }) => error ? err(error.status, error.message) : data
+        ),
     }
 };

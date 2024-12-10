@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@elysiajs/swagger": "^1.1.6",
-    "elysia": "latest"
+    "elysia": "latest",
+    "@acme/db": "workspace:*"
   },
   "devDependencies": {
     "bun-types": "latest"
