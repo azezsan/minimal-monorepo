@@ -1,27 +1,18 @@
 {
   "name": "@acme/api",
-  "exports": {
-    "./hc": {
-      "import": {
-        "default": "./dist/hc.js",
-        "types": "./dist/hc.d.ts"
-      }
-    }
-  },
+  "version": "1.0.50",
   "scripts": {
-    "dev": "bun run ./bun.ts",
-    "dev:tsc": "tsc -p tsconfig.build.json --watch",
-    "dev:wrangler": "wrangler dev src/index.ts --persist-to ../../",
-    "build": "tsc -p tsconfig.build.json",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "wrangler dev --persist-to ../../",
     "deploy": "wrangler deploy --minify",
     "cf-typegen": "wrangler types --env-interface CloudflareBindings"
   },
   "dependencies": {
-    "hono": "^4.6.12",
-    "@acme/db": "workspace:*"
+    "@elysiajs/swagger": "^1.1.6",
+    "elysia": "latest"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20241202.0",
-    "wrangler": "^3.91.0"
-  }
+    "bun-types": "latest"
+  },
+  "module": "src/index.js"
 }
