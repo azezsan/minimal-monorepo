@@ -1,9 +1,13 @@
-import { OpenAPIHono } from '@hono/zod-openapi'
-import getUser from './routes/users/[id]/get.js'
-import getAllUsers from './routes/users/get.js'
+import { Elysia } from 'elysia'
+import { app } from './routes/app'
 
-const app = new OpenAPIHono<{ Bindings: CloudflareBindings }>()
-  .route('/', getUser)
-  .route('/', getAllUsers)
+export default {
+  async fetch(request: Request, env: CloudflareBindings) {
+    return await new Elysia({ aot: false })
+      .decorate("env", env)
+      .use(app)
+      .handle(request)
+  },
+}
 
-export default app
+export type App = typeof app

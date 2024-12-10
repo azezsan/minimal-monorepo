@@ -1,10 +1,12 @@
-import { createInsertSchema, createSelectSchema } from "drizzle-zod";
-import type { z } from "zod";
+import { createSchemaFactory } from "drizzle-typebox";
+import { t, Static } from "elysia";
 
 import { usersTable } from "./users";
+
+const { createInsertSchema, createSelectSchema } = createSchemaFactory({ typeboxInstance: t })
 
 export const insertUserSchema = createInsertSchema(usersTable);
 export const selectUserSchema = createSelectSchema(usersTable);
 
-export type InsertUser = z.infer<typeof insertUserSchema>;
-export type User = z.infer<typeof selectUserSchema>;
+export type InsertUser = Static<typeof insertUserSchema>;
+export type User = Static<typeof selectUserSchema>;
