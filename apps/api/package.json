@@ -1,6 +1,7 @@
 {
   "name": "@acme/api",
   "version": "1.0.50",
+  "main": "./src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "wrangler dev --persist-to ../../",
