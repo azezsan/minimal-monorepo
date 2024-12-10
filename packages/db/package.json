@@ -12,7 +12,7 @@
         "@hono/zod-openapi": "^0.18.0",
         "@libsql/client": "^0.14.0",
         "drizzle-orm": "^0.36.4",
-        "drizzle-zod": "^0.5.1"
+        "drizzle-typebox": "^0.2.0"
     },
     "devDependencies": {
         "@clack/prompts": "^0.8.2",

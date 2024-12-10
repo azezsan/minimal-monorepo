@@ -21,16 +21,16 @@ async function getTableName(filePath: string): Promise<string | null> {
 async function generateValidationFile(folderPath: string, tableName: string): Promise<void> {
     const singularName = tableName.endsWith('s') ? tableName.slice(0, -1) : tableName;
     
-    const content = `import { createInsertSchema, createSelectSchema } from "drizzle-zod";
-import type { z } from "zod";
+    const content = `import { createInsertSchema, createSelectSchema } from "drizzle-typebox";
+import type { Static } from "@sinclair/typebox";
 
 import { ${tableName}Table } from "./${tableName}";
 
 export const insert${capitalize(singularName)}Schema = createInsertSchema(${tableName}Table);
 export const select${capitalize(singularName)}Schema = createSelectSchema(${tableName}Table);
 
-export type Insert${capitalize(singularName)} = z.infer<typeof insert${capitalize(singularName)}Schema>;
-export type ${capitalize(singularName)} = z.infer<typeof select${capitalize(singularName)}Schema>;
+export type Insert${capitalize(singularName)} = Static<typeof insert${capitalize(singularName)}Schema>;
+export type ${capitalize(singularName)} = Static<typeof select${capitalize(singularName)}Schema>;
 `;
 
     await writeFile(join(folderPath, "validation.ts"), content);
