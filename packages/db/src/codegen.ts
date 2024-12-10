@@ -21,10 +21,12 @@ async function getTableName(filePath: string): Promise<string | null> {
 async function generateValidationFile(folderPath: string, tableName: string): Promise<void> {
     const singularName = tableName.endsWith('s') ? tableName.slice(0, -1) : tableName;
     
-    const content = `import { createInsertSchema, createSelectSchema } from "drizzle-typebox";
-import type { Static } from "@sinclair/typebox";
+    const content = `import { createSchemaFactory } from "drizzle-typebox";
+import { t, Static } from "elysia";
 
 import { ${tableName}Table } from "./${tableName}";
+
+const { createInsertSchema, createSelectSchema } = createSchemaFactory({ typeboxInstance: t })
 
 export const insert${capitalize(singularName)}Schema = createInsertSchema(${tableName}Table);
 export const select${capitalize(singularName)}Schema = createSelectSchema(${tableName}Table);
@@ -57,17 +59,17 @@ async function main() {
 
         for (const folder of folders) {
             const folderPath = join(SCHEMA_DIR, folder);
-            
+
             // Skip if it's not a directory or if it's the index.ts file
             if (folder === "index.ts") continue;
-            
+
             try {
                 const files = await readdir(folderPath);
-                
+
                 // Find the table definition file
-                const tableFile = files.find(f => 
-                    f.endsWith(".ts") && 
-                    !f.includes("validation") && 
+                const tableFile = files.find(f =>
+                    f.endsWith(".ts") &&
+                    !f.includes("validation") &&
                     !f.includes("index")
                 );
 

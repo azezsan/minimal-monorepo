@@ -1,7 +1,9 @@
-import { createInsertSchema, createSelectSchema } from "drizzle-typebox";
-import type { Static } from "@sinclair/typebox";
+import { createSchemaFactory } from "drizzle-typebox";
+import { t, Static } from "elysia";
 
 import { oauthAccountsTable } from "./oauthAccounts";
+
+const { createInsertSchema, createSelectSchema } = createSchemaFactory({ typeboxInstance: t })
 
 export const insertOauthAccountSchema = createInsertSchema(oauthAccountsTable);
 export const selectOauthAccountSchema = createSelectSchema(oauthAccountsTable);
