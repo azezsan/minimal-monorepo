@@ -2,6 +2,7 @@ import type { Handle } from '@sveltejs/kit';
 import { i18n } from '$lib/i18n';
 import { deleteSessionTokenCookie, initializeSessionStore, sessionCookieName, setSessionTokenCookie } from '@acme/auth';
 import { sequence } from '@sveltejs/kit/hooks';
+import { createEden } from '@acme/rpc';
 
 const handleParaglide: Handle = i18n.handle();
 
@@ -16,7 +17,7 @@ const handleAuth: Handle = async ({ event, resolve }) => {
         return resolve(event);
     }
 
-    const sessionStore = initializeSessionStore(event.platform?.env.sessions!)
+    const sessionStore = initializeSessionStore(event.platform?.env.SESSIONS!)
 
     const { session } = await sessionStore.validateSessionToken(sessionToken);
 
@@ -27,6 +28,7 @@ const handleAuth: Handle = async ({ event, resolve }) => {
     }
 
     event.locals.session = session;
+    event.locals.api = createEden(event.platform.env.API_WORKER)
     return resolve(event);
 };
 

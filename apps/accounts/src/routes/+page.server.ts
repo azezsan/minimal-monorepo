@@ -1,5 +1,4 @@
 import { redirect, error as err } from '@sveltejs/kit';
-import { api } from '@acme/rpc';
 
 export const load = async (event) => {
     if (!event.locals.session) {
@@ -7,8 +6,8 @@ export const load = async (event) => {
     }
 
     return {
-        user: await api.users[event.locals.session.userId].get().then(
+        user: await event.locals.api.users[event.locals.session.userId].get().then(
             ({ data, error }) => error ? err(error.status, error.message) : data
-        ),
+        )
     }
 };

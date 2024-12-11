@@ -11,6 +11,10 @@ compatibility_flags = ["nodejs_compat"]
 [observability]
 enabled = true
 
+[[services]]
+binding = "API_WORKER"
+service = "api"
+
 # Bind a D1 database. D1 is Cloudflare’s native serverless SQL database.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#d1-databases
 [[d1_databases]]
@@ -21,5 +25,5 @@ database_id = "fe6b1cc7-1472-4299-b217-64d257a416ba"
 # Bind a KV Namespace. Use KV as persistent storage for small key-value pairs.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#kv-namespaces
 [[kv_namespaces]]
-binding = "sessions"
+binding = "SESSIONS"
 id = "ddb337f2f9c542ed87b3c985b45c5f0d"

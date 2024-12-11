@@ -43,7 +43,7 @@ export async function GET(event: RequestEvent): Promise<Response> {
     // TODO: Replace this with your own DB query.
     const insertedUser = await upsertUser(claims, initializeD1(event.platform?.env.DB!));
 
-    const sessionStore = initializeSessionStore(event.platform?.env.sessions!)
+    const sessionStore = initializeSessionStore(event.platform?.env.SESSIONS!)
 
     const { sessionToken, session } = await sessionStore.createSession(insertedUser[0][0].id);
 
