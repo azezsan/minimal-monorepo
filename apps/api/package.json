@@ -9,12 +9,12 @@
     "cf-typegen": "wrangler types --env-interface CloudflareBindings"
   },
   "dependencies": {
+    "@acme/db": "workspace:*",
     "@elysiajs/swagger": "^1.1.6",
-    "elysia": "latest",
-    "@acme/db": "workspace:*"
+    "elysia": "1.1.26"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "wrangler": "^3.95.0"
   },
   "module": "src/index.js"
 }
