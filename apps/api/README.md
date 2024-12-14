@@ -6,6 +6,6 @@ Elysia API server.
 
 ## Development
 ```bash
-bun run dev      # Start dev server
-bun run deploy   # Deploy to Workers
+pnpm dev        # Start dev server
+pnpm deploy     # Deploy to Workers
 ```

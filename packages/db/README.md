@@ -44,7 +44,7 @@ export const usersTable = sqliteTable("users", {
 
 Run codegen to auto-generate validation schemas:
 ```bash
-bun run codegen
+pnpm codegen
 ```
 
 Generated output:

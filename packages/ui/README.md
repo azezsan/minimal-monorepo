@@ -24,4 +24,4 @@ export { default } from "@acme/ui/postcss.config"
 </script>
 ```
 
-Add components using `bunx shadcn-svelte` in package root.
+Add components using `pnpm dlx shadcn-svelte` in package root.
