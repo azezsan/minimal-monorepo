@@ -4,7 +4,6 @@
     "module": "ES2022",
     "moduleResolution": "node",
     "types": [
-      "bun-types",
       "@cloudflare/workers-types/2023-07-01"
     ],
     "esModuleInterop": true,
