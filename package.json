@@ -7,15 +7,10 @@
         "lint": "turbo run lint"
     },
     "devDependencies": {
-        "@types/bun": "^1.1.14",
         "turbo": "^2.3.3"
     },
     "engines": {
         "node": ">=18"
     },
-    "packageManager": "bun@1.1.30",
-    "workspaces": [
-        "apps/*",
-        "packages/*"
-    ]
+    "packageManager": "pnpm@9.15.0"
 }
