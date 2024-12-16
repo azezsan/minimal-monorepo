@@ -14,6 +14,7 @@
 		"cf-typegen": "wrangler types && mv worker-configuration.d.ts src/"
 	},
 	"devDependencies": {
+		"@acme/tsconfig": "workspace:*",
 		"@acme/auth": "workspace:*",
 		"@acme/db": "workspace:*",
 		"@acme/ui": "workspace:*",
