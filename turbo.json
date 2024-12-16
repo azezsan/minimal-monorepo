@@ -12,6 +12,7 @@
             "outputs": [
                 ".svelte-kit/**",
                 ".vercel/**",
+                ".cache/**",
                 "dist/**"
             ]
         },

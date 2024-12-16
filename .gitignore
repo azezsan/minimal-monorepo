@@ -30,6 +30,7 @@ yarn-error.log*
 .vercel
 
 # output files
+.cache
 .wrangler
 dist
 build
