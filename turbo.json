@@ -11,7 +11,9 @@
             ],
             "outputs": [
                 ".svelte-kit/**",
-                ".vercel/**"
+                ".vercel/**",
+                ".cache/**",
+                "dist/**"
             ]
         },
         "lint": {},

@@ -1,8 +1,15 @@
 {
     "name": "@acme/db",
     "private": true,
-    "main": "./src/index.ts",
+    "exports": {
+        ".": {
+            "types": "./src/index.ts",
+            "default": "./dist/index.js"
+        }
+    },
     "scripts": {
+        "build": "tsc",
+        "dev": "tsc --watch",
         "generate": "drizzle-kit generate",
         "migrate": "bun run src/migrate.ts",
         "studio": "drizzle-kit studio",
@@ -14,6 +21,7 @@
         "elysia": "^1.1.26"
     },
     "devDependencies": {
+        "@acme/tsconfig": "workspace:*",
         "@clack/prompts": "^0.8.2",
         "@cloudflare/workers-types": "^4.20241205.0",
         "better-sqlite3": "^11.7.0",
