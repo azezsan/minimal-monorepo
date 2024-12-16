@@ -1,15 +1,27 @@
 {
     "name": "@acme/auth",
     "private": true,
-    "main": "./src/index.ts",
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./src/index.ts",
+            "default": "./dist/index.js"
+        }
+    },
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsc --watch"
+    },
     "dependencies": {
         "@acme/db": "workspace:*",
         "@oslojs/crypto": "^1.0.1",
         "@oslojs/encoding": "^1.1.0",
-        "arctic": "^2.2.2"
+        "arctic": "^2.3.2"
     },
     "devDependencies": {
+        "@acme/tsconfig": "workspace:*",
         "@cloudflare/workers-types": "^4.20241112.0",
-        "@sveltejs/kit": "^2.8.2"
+        "@sveltejs/kit": "^2.11.1",
+        "typescript": "^5.7.2"
     }
 }
