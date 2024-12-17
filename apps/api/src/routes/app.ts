@@ -5,6 +5,7 @@ import swagger from "@elysiajs/swagger";
 export const app = new Elysia({ aot: false })
     .use(swagger())
     .decorate("env", null as unknown as CloudflareBindings)
+    .decorate("executionCtx", null as unknown as ExecutionContext)
     .get("/", () => 'Hello Elysia')
     .get("/users", async ({ env }) => {
         const db = initializeD1(env.DB)
