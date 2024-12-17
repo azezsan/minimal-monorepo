@@ -23,7 +23,7 @@
   "devDependencies": {
     "@acme/tsconfig": "workspace:*",
     "@cloudflare/workers-types": "catalog:",
-    "wrangler": "^3.95.0",
+    "wrangler": "catalog:",
     "typescript": "catalog:"
   },
   "module": "src/index.js"
