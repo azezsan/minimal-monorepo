@@ -18,7 +18,8 @@
     },
     "devDependencies": {
         "@acme/tsconfig": "workspace:*",
-        "@cloudflare/workers-types": "^4.20241112.0",
-        "elysia": "^1.1.26"
+        "@cloudflare/workers-types": "catalog:",
+        "elysia": "^1.1.26",
+        "typescript": "catalog:"
     }
 }

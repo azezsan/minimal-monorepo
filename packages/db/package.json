@@ -23,9 +23,10 @@
     "devDependencies": {
         "@acme/tsconfig": "workspace:*",
         "@clack/prompts": "^0.8.2",
-        "@cloudflare/workers-types": "^4.20241205.0",
+        "@cloudflare/workers-types": "catalog:",
         "better-sqlite3": "^11.7.0",
         "drizzle-kit": "^0.30.0",
-        "wrangler": "^3.94.0"
+        "typescript": "catalog:",
+        "wrangler": "catalog:"
     }
 }
