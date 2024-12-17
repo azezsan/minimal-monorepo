@@ -5,3 +5,4 @@ packages:
 
 catalog:
   typescript: ^5.7.2
+  "@cloudflare/workers-types": ^4.20241216.0
