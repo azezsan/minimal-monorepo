@@ -22,7 +22,7 @@ async function generateValidationFile(folderPath: string, tableName: string): Pr
     const singularName = tableName.endsWith('s') ? tableName.slice(0, -1) : tableName;
     
     const content = `import { createSchemaFactory } from "drizzle-typebox";
-import { t, type Static } from "elysia";
+import { t } from "elysia";
 
 import { ${tableName}Table } from "./${tableName}";
 
@@ -31,8 +31,8 @@ const { createInsertSchema, createSelectSchema } = createSchemaFactory({ typebox
 export const insert${capitalize(singularName)}Schema = createInsertSchema(${tableName}Table);
 export const select${capitalize(singularName)}Schema = createSelectSchema(${tableName}Table);
 
-export type Insert${capitalize(singularName)} = Static<typeof insert${capitalize(singularName)}Schema>;
-export type ${capitalize(singularName)} = Static<typeof select${capitalize(singularName)}Schema>;
+export type Insert${capitalize(singularName)} = typeof insert${capitalize(singularName)}Schema.static;
+export type ${capitalize(singularName)} = typeof select${capitalize(singularName)}Schema.static;
 `;
 
     await writeFile(join(folderPath, "validation.ts"), content);
