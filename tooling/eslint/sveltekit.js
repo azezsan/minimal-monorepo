@@ -1,7 +1,7 @@
 import svelte from 'eslint-plugin-svelte';
 import globals from 'globals';
 import ts from 'typescript-eslint';
-import { config as baseConfig } from './base'
+import { config as baseConfig } from './base.js'
 
 export default ts.config(
     ...baseConfig,
@@ -25,6 +25,6 @@ export default ts.config(
 		}
 	},
 	{
-		ignores: ['build/', '.svelte-kit/', 'dist/']
+		ignores: ['build/', '.svelte-kit/', 'src/lib/paraglide/']
 	}
 );
