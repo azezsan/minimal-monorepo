@@ -3,6 +3,7 @@
 Shared Drizzle ORM package for database management.
 
 ## Usage
+
 ```ts
 import { initializeD1, usersTable } from '@acme/db';
 
@@ -11,12 +12,13 @@ const users = await db.select().from(usersTable).all();
 ```
 
 ## Structure
+
 ```
 db/
 ├─ src/
 │  ├─ drizzle/        # Generated files
 │  ├─ schema/         # Table definitions
-│  │  ├─ users/       
+│  │  ├─ users/
 │  │  │  ├─ users.ts      # Schema
 │  │  │  ├─ validation.ts # TypeBox schemas
 │  │  │  └─ index.ts      # Exports
@@ -28,32 +30,37 @@ db/
 ```
 
 ## Scripts
+
 - `generate`: Create migrations
 - `migrate`: Apply migrations
 - `codegen`: Generate validation schemas
 
 ## Codegen Example
+
 Create a table schema:
+
 ```ts
 // schema/users/users.ts
-export const usersTable = sqliteTable("users", {
-    id: integer("id").primaryKey(),
-    email: text("email").notNull()
+export const usersTable = sqliteTable('users', {
+  id: integer('id').primaryKey(),
+  email: text('email').notNull()
 });
 ```
 
 Run codegen to auto-generate validation schemas:
+
 ```bash
 pnpm codegen
 ```
 
 Generated output:
+
 ```ts
 // schema/users/validation.ts
-import { createSchemaFactory } from "drizzle-typebox";
-import { t, Static } from "elysia";
+import { createSchemaFactory } from 'drizzle-typebox';
+import { t, Static } from 'elysia';
 
-const { createInsertSchema, createSelectSchema } = createSchemaFactory({ typeboxInstance: t })
+const { createInsertSchema, createSelectSchema } = createSchemaFactory({ typeboxInstance: t });
 
 export const insertUserSchema = createInsertSchema(usersTable);
 export const selectUserSchema = createSelectSchema(usersTable);
@@ -64,7 +71,6 @@ export type User = Static<typeof selectUserSchema>;
 
 ```ts
 // schema/users/index.ts
-export * from "./users"
-export * from "./validation"
+export * from './users';
+export * from './validation';
 ```
-

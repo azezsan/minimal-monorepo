@@ -1,4 +1,4 @@
-import type { Config } from "drizzle-kit";
+import type { Config } from 'drizzle-kit';
 
 import fs from 'fs';
 import path from 'path';
@@ -22,13 +22,15 @@ function getLocalD1DB() {
 }
 
 export default {
-  dialect: "sqlite",
-  out: "./drizzle",
-  schema: "./src/schema/index.ts",
+  dialect: 'sqlite',
+  out: './drizzle',
+  schema: './src/schema/index.ts',
   strict: true,
-  ...(process.argv[2] === "studio" ? {
-    dbCredentials: {
-      url: getLocalD1DB()
-    }
-  } : {})
+  ...(process.argv[2] === 'studio'
+    ? {
+        dbCredentials: {
+          url: getLocalD1DB()
+        }
+      }
+    : {})
 } satisfies Config;

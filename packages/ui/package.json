@@ -1,27 +1,27 @@
 {
-    "name": "@acme/ui",
-    "private": true,
-    "type": "module",
-    "scripts": {
-        "lint": "eslint . && prettier --check . --ignore-path ../../.gitignore",
-        "format": "prettier --write ."
-    },
-    "exports": {
-        "./app.css": "./src/app.css",
-        "./postcss.config": "./postcss.config.mjs",
-        "./tailwind.config": "./tailwind.config.ts",
-        "./lib/*": "./src/lib/*",
-        "./lib/components/ui/*": "./src/lib/components/ui/*/index.ts"
-    },
-    "devDependencies": {
-        "@acme/eslint-config": "workspace:*",
-        "bits-ui": "^1.0.0-next.64",
-        "clsx": "^2.1.1",
-        "svelte": "^5.12.0",
-        "tailwindcss": "^3.4.16",
-        "tailwind-merge": "^2.5.5",
-        "tailwind-variants": "^0.3.0",
-        "tailwindcss-animate": "^1.0.7",
-        "typescript": "catalog:"
-    }
+  "name": "@acme/ui",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "eslint . && prettier --check . --ignore-path ../../.gitignore",
+    "format": "prettier --write ."
+  },
+  "exports": {
+    "./app.css": "./src/app.css",
+    "./postcss.config": "./postcss.config.mjs",
+    "./tailwind.config": "./tailwind.config.ts",
+    "./lib/*": "./src/lib/*",
+    "./lib/components/ui/*": "./src/lib/components/ui/*/index.ts"
+  },
+  "devDependencies": {
+    "@acme/eslint-config": "workspace:*",
+    "bits-ui": "^1.0.0-next.64",
+    "clsx": "^2.1.1",
+    "svelte": "^5.12.0",
+    "tailwindcss": "^3.4.16",
+    "tailwind-merge": "^2.5.5",
+    "tailwind-variants": "^0.3.0",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "catalog:"
+  }
 }
