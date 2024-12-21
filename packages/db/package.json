@@ -13,7 +13,9 @@
         "generate": "drizzle-kit generate",
         "migrate": "bun run src/migrate.ts",
         "studio": "drizzle-kit studio",
-        "codegen": "bun run src/codegen.ts"
+        "codegen": "bun run src/codegen.ts",
+        "lint": "eslint . && prettier --check . --ignore-path ../../.gitignore",
+        "format": "prettier --write ."
     },
     "dependencies": {
         "drizzle-orm": "^0.38.0",
@@ -22,6 +24,7 @@
     },
     "devDependencies": {
         "@acme/tsconfig": "workspace:*",
+        "@acme/eslint-config": "workspace:*",
         "@clack/prompts": "^0.8.2",
         "@cloudflare/workers-types": "catalog:",
         "better-sqlite3": "^11.7.0",
