@@ -10,7 +10,9 @@
     },
     "scripts": {
         "build": "tsc",
-        "dev": "tsc --watch"
+        "dev": "tsc --watch",
+        "lint": "eslint . && prettier --check . --ignore-path ../../.gitignore",
+        "format": "prettier --write ."
     },
     "dependencies": {
         "@acme/db": "workspace:*",
@@ -20,6 +22,7 @@
     },
     "devDependencies": {
         "@acme/tsconfig": "workspace:*",
+        "@acme/eslint-config": "workspace:*",
         "@cloudflare/workers-types": "catalog:",
         "@sveltejs/kit": "^2.11.1",
         "typescript": "catalog:"
