@@ -29,9 +29,28 @@ yarn-error.log*
 .turbo
 .vercel
 
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+
+# paraglide
+paraglide
+
+# wrangler files
+.wrangler
+.dev.vars
+
 # output files
 .cache
-.wrangler
 dist
 build
 v3
+
+**/*.trace
+**/*.zip
+**/*.tar.gz
+**/*.tgz
+**/*.log
+package-lock.json
+**/*.bun

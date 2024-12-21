@@ -1,13 +1,8 @@
 {
-    "extends": "@acme/tsconfig/cloudflare-types.json",
-    "compilerOptions": {
-        "outDir": "./dist"
-    },
-    "include": [
-        "./src"
-    ],
-    "exclude": [
-        "./src/codegen.ts",
-        "./src/migrate.ts"
-    ]
+  "extends": "@acme/tsconfig/cloudflare-types.json",
+  "compilerOptions": {
+    "outDir": "./dist"
+  },
+  "include": ["./src"],
+  "exclude": ["./src/codegen.ts", "./src/migrate.ts"]
 }

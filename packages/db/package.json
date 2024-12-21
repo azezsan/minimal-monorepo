@@ -1,32 +1,36 @@
 {
-    "name": "@acme/db",
-    "private": true,
-    "exports": {
-        ".": {
-            "types": "./src/index.ts",
-            "default": "./dist/index.js"
-        }
-    },
-    "scripts": {
-        "build": "tsc",
-        "dev": "tsc --watch",
-        "generate": "drizzle-kit generate",
-        "migrate": "bun run src/migrate.ts",
-        "studio": "drizzle-kit studio",
-        "codegen": "bun run src/codegen.ts"
-    },
-    "dependencies": {
-        "drizzle-orm": "^0.38.0",
-        "drizzle-typebox": "^0.2.0",
-        "elysia": "^1.1.26"
-    },
-    "devDependencies": {
-        "@acme/tsconfig": "workspace:*",
-        "@clack/prompts": "^0.8.2",
-        "@cloudflare/workers-types": "catalog:",
-        "better-sqlite3": "^11.7.0",
-        "drizzle-kit": "^0.30.0",
-        "typescript": "catalog:",
-        "wrangler": "catalog:"
+  "name": "@acme/db",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
     }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "generate": "drizzle-kit generate",
+    "migrate": "bun run src/migrate.ts",
+    "studio": "drizzle-kit studio",
+    "codegen": "bun run src/codegen.ts",
+    "lint": "eslint . && prettier --check . --ignore-path ../../.gitignore",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.38.0",
+    "drizzle-typebox": "^0.2.0",
+    "elysia": "^1.1.26"
+  },
+  "devDependencies": {
+    "@acme/tsconfig": "workspace:*",
+    "@acme/eslint-config": "workspace:*",
+    "@clack/prompts": "^0.8.2",
+    "@cloudflare/workers-types": "catalog:",
+    "better-sqlite3": "^11.7.0",
+    "drizzle-kit": "^0.30.0",
+    "typescript": "catalog:",
+    "wrangler": "catalog:"
+  }
 }

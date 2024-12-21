@@ -1,9 +1,7 @@
 {
-    "extends": "@acme/tsconfig/cloudflare-types.json",
-    "compilerOptions": {
-        "outDir": "./dist"
-    },
-    "include": [
-        "./src"
-    ]
+  "extends": "@acme/tsconfig/cloudflare-types.json",
+  "compilerOptions": {
+    "outDir": "./dist"
+  },
+  "include": ["./src"]
 }
