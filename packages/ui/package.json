@@ -1,6 +1,7 @@
 {
     "name": "@acme/ui",
     "private": true,
+    "type": "module",
     "scripts": {
         "lint": "eslint . && prettier --check . --ignore-path ../../.gitignore",
         "format": "prettier --write ."
