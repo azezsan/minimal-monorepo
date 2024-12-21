@@ -1,6 +1,7 @@
 {
     "name": "@acme/db",
     "private": true,
+    "type": "module",
     "exports": {
         ".": {
             "types": "./src/index.ts",
