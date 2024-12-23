@@ -1,4 +1,4 @@
-import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from '$env/static/private';
+import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from '$env/dynamic/private';
 import { createGoogleProvider, initializeSessionStore, setSessionTokenCookie, decodeIdToken } from '@acme/auth';
 import { usersTable, oauthAccountsTable, eq, sql, initializeD1 } from '@acme/db';
 
