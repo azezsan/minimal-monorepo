@@ -1,4 +1,4 @@
-import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from '$env/dynamic/private';
+import { env } from '$env/dynamic/private';
 import { createGoogleProvider, initializeSessionStore, setSessionTokenCookie, decodeIdToken } from '@acme/auth';
 import { usersTable, oauthAccountsTable, eq, sql, initializeD1 } from '@acme/db';
 
@@ -24,7 +24,7 @@ export async function GET(event: RequestEvent): Promise<Response> {
 	event.cookies.delete('google_code_verifier', { path: '/' });
 
 	let tokens: OAuth2Tokens;
-	const google = createGoogleProvider(GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, event.url.origin);
+	const google = createGoogleProvider(env.GOOGLE_CLIENT_ID, env.GOOGLE_CLIENT_SECRET, event.url.origin);
 	try {
 		tokens = await google.validateAuthorizationCode(code, codeVerifier);
 	} catch (e) {

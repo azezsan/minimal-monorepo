@@ -2,10 +2,10 @@ import { redirect } from '@sveltejs/kit';
 import { generateState, generateCodeVerifier } from '@acme/auth';
 import { createGoogleProvider } from '@acme/auth';
 import { dev } from '$app/environment';
-import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from '$env/dynamic/private';
+import { env } from '$env/dynamic/private';
 
 export const GET = async (event) => {
-	const google = createGoogleProvider(GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, event.url.origin);
+	const google = createGoogleProvider(env.GOOGLE_CLIENT_ID, env.GOOGLE_CLIENT_SECRET, event.url.origin);
 
 	const state = generateState();
 	const codeVerifier = generateCodeVerifier();
