@@ -14,12 +14,12 @@
 		"cf-typegen": "wrangler types && mv worker-configuration.d.ts src/"
 	},
 	"devDependencies": {
-		"@acme/tsconfig": "workspace:*",
-		"@acme/eslint-config": "workspace:*",
 		"@acme/auth": "workspace:*",
 		"@acme/db": "workspace:*",
-		"@acme/ui": "workspace:*",
+		"@acme/eslint-config": "workspace:*",
 		"@acme/rpc": "workspace:*",
+		"@acme/tsconfig": "workspace:*",
+		"@acme/ui": "workspace:*",
 		"@cloudflare/workers-types": "catalog:",
 		"@sveltejs/adapter-cloudflare": "^4.8.0",
 		"@sveltejs/kit": "^2.9.0",
@@ -36,6 +36,7 @@
 	},
 	"dependencies": {
 		"@inlang/paraglide-sveltekit": "^0.12.1",
+		"arctic": "^2.3.2",
 		"nanoid": "^5.0.9"
 	}
 }
