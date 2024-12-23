@@ -1,10 +1,10 @@
 import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from '$env/static/private';
-import { createGoogleProvider, initializeSessionStore, setSessionTokenCookie } from '@acme/auth';
+import { createGoogleProvider, initializeSessionStore, setSessionTokenCookie, decodeIdToken } from '@acme/auth';
 import { usersTable, oauthAccountsTable, eq, sql, initializeD1 } from '@acme/db';
-import { decodeIdToken } from 'arctic';
+
 
 import type { RequestEvent } from '@sveltejs/kit';
-import type { OAuth2Tokens } from 'arctic';
+import type { OAuth2Tokens } from '@acme/auth';
 import type { DrizzleD1Database, schema } from '@acme/db';
 import { customAlphabet } from 'nanoid';
 import { redirect } from '@sveltejs/kit';
