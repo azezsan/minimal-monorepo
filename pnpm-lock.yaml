@@ -23,9 +23,6 @@ importers:
       turbo:
         specifier: ^2.3.3
         version: 2.3.3
-      wrangler:
-        specifier: 'catalog:'
-        version: 3.99.0(@cloudflare/workers-types@4.20241216.0)
 
   apps/accounts:
     dependencies:

@@ -9,8 +9,7 @@
         "deploy:accounts": "turbo -F @acme/accounts deploy"
     },
     "devDependencies": {
-        "turbo": "^2.3.3",
-        "wrangler": "catalog:"
+        "turbo": "^2.3.3"
     },
     "engines": {
         "node": ">=22"
