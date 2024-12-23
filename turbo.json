@@ -18,6 +18,7 @@
         },
         "lint": {},
         "format": {},
+        "deploy": {},
         "dev": {
             "cache": false,
             "persistent": true

@@ -5,10 +5,12 @@
         "build": "turbo run build",
         "dev": "turbo run dev",
         "lint": "turbo run lint",
-        "format": "turbo run format"
+        "format": "turbo run format",
+        "deploy:accounts": "turbo -F @acme/accounts deploy"
     },
     "devDependencies": {
-        "turbo": "^2.3.3"
+        "turbo": "^2.3.3",
+        "wrangler": "catalog:"
     },
     "engines": {
         "node": ">=22"
