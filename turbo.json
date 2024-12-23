@@ -18,7 +18,11 @@
         },
         "lint": {},
         "format": {},
-        "deploy": {},
+        "deploy": {
+            "dependsOn": [
+                "^build"
+            ]
+        },
         "dev": {
             "cache": false,
             "persistent": true
