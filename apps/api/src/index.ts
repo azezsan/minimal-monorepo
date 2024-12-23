@@ -3,7 +3,7 @@ import { app } from './routes/app';
 
 export default {
   async fetch(request: Request, env: CloudflareBindings, ctx: ExecutionContext) {
-    return await new Elysia()
+    return await new Elysia({ aot: false })
       .decorate('executionCtx', ctx)
       .decorate('env', env)
       .use(app)
