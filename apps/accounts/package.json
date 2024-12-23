@@ -5,12 +5,12 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"preview": "bun run build && wrangler dev",
+		"preview": "pnpm run build && wrangler dev",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "eslint . && prettier --check . --ignore-path ../../.gitignore",
 		"format": "prettier --write .",
-		"deploy": "bun run build && wrangler deploy",
+		"deploy": "pnpm run build && wrangler deploy",
 		"cf-typegen": "wrangler types && mv worker-configuration.d.ts src/"
 	},
 	"devDependencies": {
