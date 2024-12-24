@@ -12,7 +12,8 @@
     "build": "tsc",
     "dev": "tsc --watch",
     "lint": "eslint . && prettier --check . --ignore-path ../../.gitignore",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "check": "tsc --noEmit"
   },
   "dependencies": {
     "@acme/db": "workspace:*",
