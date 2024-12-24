@@ -14,8 +14,9 @@
     "dev": "wrangler dev --persist-to ../../",
     "deploy": "wrangler deploy --minify",
     "cf-typegen": "wrangler types --env-interface CloudflareBindings && mv worker-configuration.d.ts src/",
-    "lint": "eslint . && prettier --check .",
-    "format": "prettier --write ."
+    "lint": "eslint . && prettier --check . --ignore-path ../../.gitignore",
+    "format": "prettier --write .",
+    "check": "tsc --noEmit"
   },
   "dependencies": {
     "@acme/db": "workspace:*",

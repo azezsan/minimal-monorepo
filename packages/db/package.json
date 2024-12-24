@@ -16,7 +16,8 @@
     "studio": "drizzle-kit studio",
     "codegen": "bun run src/codegen.ts",
     "lint": "eslint . && prettier --check . --ignore-path ../../.gitignore",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "check": "tsc --noEmit"
   },
   "dependencies": {
     "drizzle-orm": "^0.38.0",

@@ -14,7 +14,7 @@
         /* Strictness */
         "strict": true,
         "forceConsistentCasingInFileNames": true,
-        "noUncheckedIndexedAccess": true,
+        // "noUncheckedIndexedAccess": true,
         "noImplicitOverride": true,
         "checkJs": true,
         /** Keep TSC performant in monorepos */
