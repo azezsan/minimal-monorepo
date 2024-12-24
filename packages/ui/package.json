@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "lint": "eslint . && prettier --check . --ignore-path ../../.gitignore",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
   },
   "exports": {
     "./app.css": "./src/app.css",
@@ -15,9 +16,11 @@
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
+    "@sveltejs/kit": "^2.15.0",
     "bits-ui": "^1.0.0-next.64",
     "clsx": "^2.1.1",
     "svelte": "^5.12.0",
+    "svelte-check": "^4.1.0",
     "tailwind-merge": "^2.5.5",
     "tailwind-variants": "^0.3.0",
     "tailwindcss": "^3.4.16",
