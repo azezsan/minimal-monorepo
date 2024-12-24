@@ -196,8 +196,8 @@ importers:
         specifier: workspace:*
         version: link:../../apps/api
       '@elysiajs/eden':
-        specifier: ^1.1.3
-        version: 1.1.3(elysia@1.1.26(@sinclair/typebox@0.34.11)(openapi-types@12.1.3)(typescript@5.7.2))
+        specifier: ^1.2.0
+        version: 1.2.0(elysia@1.2.2(@sinclair/typebox@0.34.11)(openapi-types@12.1.3)(typescript@5.7.2))
     devDependencies:
       '@acme/eslint-config':
         specifier: workspace:*
@@ -209,8 +209,8 @@ importers:
         specifier: 'catalog:'
         version: 4.20241216.0
       elysia:
-        specifier: ^1.1.26
-        version: 1.1.26(@sinclair/typebox@0.34.11)(openapi-types@12.1.3)(typescript@5.7.2)
+        specifier: ^1.2.2
+        version: 1.2.2(@sinclair/typebox@0.34.11)(openapi-types@12.1.3)(typescript@5.7.2)
       typescript:
         specifier: 'catalog:'
         version: 5.7.2
@@ -347,10 +347,10 @@ packages:
   '@drizzle-team/brocli@0.10.2':
     resolution: {integrity: sha512-z33Il7l5dKjUgGULTqBsQBQwckHh5AbIuxhdsIxDDiZAzBOrZO6q9ogcWC65kU382AfynTfgNumVcNIjuIua6w==}
 
-  '@elysiajs/eden@1.1.3':
-    resolution: {integrity: sha512-N4AbnQ0q5dmpPLv+SHJc11EjOWUhSLGSpsWuMJ4Kg2NhoXzsZB/dPgjtgKJFIKcUdBmpS3k2YLiN/nrNzotNrA==}
+  '@elysiajs/eden@1.2.0':
+    resolution: {integrity: sha512-MpV45ahuF+iFZUg4tyJbLr9qxzY99m8clJVgQrDrz7Qh6eOKQ8MY6vjYMj3Wh21pTIRHPHzOLhVorRGby1/Owg==}
     peerDependencies:
-      elysia: '>= 1.1.0'
+      elysia: '>= 1.2.0'
 
   '@elysiajs/swagger@1.2.0':
     resolution: {integrity: sha512-OPx93DP6rM2VHjA3D44Xiz5MYm9AYlO2NGWPsnSsdyvaOCiL9wJj529583h7arX4iIEYE5LiLB0/A45unqbopw==}
@@ -3231,9 +3231,9 @@ snapshots:
 
   '@drizzle-team/brocli@0.10.2': {}
 
-  '@elysiajs/eden@1.1.3(elysia@1.1.26(@sinclair/typebox@0.34.11)(openapi-types@12.1.3)(typescript@5.7.2))':
+  '@elysiajs/eden@1.2.0(elysia@1.2.2(@sinclair/typebox@0.34.11)(openapi-types@12.1.3)(typescript@5.7.2))':
     dependencies:
-      elysia: 1.1.26(@sinclair/typebox@0.34.11)(openapi-types@12.1.3)(typescript@5.7.2)
+      elysia: 1.2.2(@sinclair/typebox@0.34.11)(openapi-types@12.1.3)(typescript@5.7.2)
 
   '@elysiajs/swagger@1.2.0(elysia@1.2.2(@sinclair/typebox@0.34.11)(openapi-types@12.1.3)(typescript@5.7.2))':
     dependencies:
