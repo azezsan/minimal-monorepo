@@ -3,13 +3,9 @@
   "version": "1.0.50",
   "type": "module",
   "exports": {
-    ".": {
-      "default": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
+    ".": "./src/index.ts"
   },
   "scripts": {
-    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "wrangler dev --persist-to ../../",
     "deploy": "wrangler deploy --minify",
@@ -20,15 +16,15 @@
   },
   "dependencies": {
     "@acme/db": "workspace:*",
-    "@elysiajs/swagger": "^1.1.6",
-    "elysia": "1.1.26"
+    "@elysiajs/swagger": "^1.2.0",
+    "elysia": "^1.2.2"
   },
   "devDependencies": {
-    "@acme/tsconfig": "workspace:*",
     "@acme/eslint-config": "workspace:*",
+    "@acme/tsconfig": "workspace:*",
     "@cloudflare/workers-types": "catalog:",
-    "wrangler": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "wrangler": "catalog:"
   },
   "module": "src/index.js"
 }

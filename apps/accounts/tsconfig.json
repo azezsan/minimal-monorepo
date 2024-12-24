@@ -1,5 +1,5 @@
 {
-	"extends": ["@acme/tsconfig/cloudflare-types.json", "./.svelte-kit/tsconfig.json"],
+	"extends": ["./.svelte-kit/tsconfig.json"],
 	"compilerOptions": {
 		"allowJs": true,
 		"checkJs": true,
@@ -9,7 +9,8 @@
 		"skipLibCheck": true,
 		"sourceMap": true,
 		"strict": true,
-		"moduleResolution": "bundler"
+		"moduleResolution": "bundler",
+		"types": ["@cloudflare/workers-types/2023-07-01"]
 	}
 	// Path aliases are handled by https://svelte.dev/docs/kit/configuration#alias
 	// except $lib which is handled by https://svelte.dev/docs/kit/configuration#files

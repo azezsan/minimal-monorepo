@@ -1,7 +1,10 @@
 {
-  "extends": "@acme/tsconfig/cloudflare-types.json",
+  "extends": "@acme/tsconfig/base.json",
   "compilerOptions": {
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "declaration": false,
+    "declarationMap": false,
+    "types": ["@cloudflare/workers-types/2023-07-01"]
   },
   "include": ["./src"]
 }
