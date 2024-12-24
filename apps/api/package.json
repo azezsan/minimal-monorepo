@@ -20,15 +20,15 @@
   },
   "dependencies": {
     "@acme/db": "workspace:*",
-    "@elysiajs/swagger": "^1.1.6",
-    "elysia": "1.1.26"
+    "@elysiajs/swagger": "^1.2.0",
+    "elysia": "^1.2.2"
   },
   "devDependencies": {
-    "@acme/tsconfig": "workspace:*",
     "@acme/eslint-config": "workspace:*",
+    "@acme/tsconfig": "workspace:*",
     "@cloudflare/workers-types": "catalog:",
-    "wrangler": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "wrangler": "catalog:"
   },
   "module": "src/index.js"
 }
