@@ -5,7 +5,8 @@
         "build": "turbo run build",
         "dev": "turbo run dev",
         "lint": "turbo run lint",
-        "format": "turbo run format"
+        "format": "turbo run format",
+        "check": "turbo run check"
     },
     "devDependencies": {
         "turbo": "^2.3.3"
