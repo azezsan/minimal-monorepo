@@ -67,4 +67,4 @@ A lightweight monorepo template using SvelteKit, Elysia, and Cloudflare Workers.
 ### 4. RPC Build Requirements
 **Issue**: The rpc package requires api to have a build step.
 
-- This approach may need optimization in future updates
+- This approach may not be required
