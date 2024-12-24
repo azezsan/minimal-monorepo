@@ -12,3 +12,7 @@ A lightweight monorepo template using SvelteKit, Elysia, and Cloudflare Workers.
   - `db`: Drizzle ORM
   - `rpc`: Elysia RPC client
   - `auth`: Lucia auth utilities
+
+- **tooling**
+  - `eslint`: Shared ESLint configuration
+  - `tsconfig`: Shared TypeScript configuration
