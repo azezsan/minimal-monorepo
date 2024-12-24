@@ -1,3 +1,4 @@
+/// <reference path="./worker-configuration.d.ts" />
 import { Elysia } from 'elysia';
 import { app } from './routes/app';
 
