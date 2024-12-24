@@ -3,13 +3,9 @@
   "version": "1.0.50",
   "type": "module",
   "exports": {
-    ".": {
-      "default": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
+    ".": "./src/index.ts"
   },
   "scripts": {
-    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "wrangler dev --persist-to ../../",
     "deploy": "wrangler deploy --minify",
