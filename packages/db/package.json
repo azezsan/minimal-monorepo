@@ -21,8 +21,7 @@
   },
   "dependencies": {
     "drizzle-orm": "^0.38.0",
-    "drizzle-typebox": "^0.2.0",
-    "elysia": "^1.1.26"
+    "drizzle-typebox": "^0.2.0"
   },
   "devDependencies": {
     "@acme/tsconfig": "workspace:*",

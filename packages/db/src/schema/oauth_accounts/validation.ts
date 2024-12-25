@@ -1,9 +1,6 @@
-import { createSchemaFactory } from 'drizzle-typebox';
-import { t } from 'elysia';
+import { createInsertSchema, createSelectSchema } from 'drizzle-typebox';
 
 import { oauthAccountsTable } from './oauthAccounts';
-
-const { createInsertSchema, createSelectSchema } = createSchemaFactory({ typeboxInstance: t });
 
 export const insertOauthAccountSchema = createInsertSchema(oauthAccountsTable);
 export const selectOauthAccountSchema = createSelectSchema(oauthAccountsTable);

@@ -21,12 +21,9 @@ async function getTableName(filePath: string): Promise<string | null> {
 async function generateValidationFile(folderPath: string, tableName: string): Promise<void> {
   const singularName = tableName.endsWith('s') ? tableName.slice(0, -1) : tableName;
 
-  const content = `import { createSchemaFactory } from "drizzle-typebox";
-import { t } from "elysia";
+  const content = `import { createInsertSchema, createSelectSchema } from 'drizzle-typebox';
 
-import { ${tableName}Table } from "./${tableName}";
-
-const { createInsertSchema, createSelectSchema } = createSchemaFactory({ typeboxInstance: t })
+import { ${tableName}Table } from './${tableName}';
 
 export const insert${capitalize(singularName)}Schema = createInsertSchema(${tableName}Table);
 export const select${capitalize(singularName)}Schema = createSelectSchema(${tableName}Table);

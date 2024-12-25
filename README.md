@@ -63,8 +63,3 @@ A lightweight monorepo template using SvelteKit, Elysia, and Cloudflare Workers.
 
 - Currently using WinterCG as a temporary solution
 - Future fix: Elysia v1.20+ will provide an official Cloudflare adapter
-
-### 4. RPC Build Requirements
-**Issue**: The rpc package requires api to have a build step.
-
-- This approach may not be required

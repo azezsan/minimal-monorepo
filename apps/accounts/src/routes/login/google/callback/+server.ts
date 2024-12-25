@@ -25,8 +25,8 @@ export async function GET(event: RequestEvent): Promise<Response> {
 
 	let tokens: OAuth2Tokens;
 	const google = createGoogleProvider(
-		env.GOOGLE_CLIENT_ID,
-		env.GOOGLE_CLIENT_SECRET,
+		env.GOOGLE_CLIENT_ID!,
+		env.GOOGLE_CLIENT_SECRET!,
 		event.url.origin
 	);
 
