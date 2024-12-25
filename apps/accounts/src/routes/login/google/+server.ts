@@ -6,8 +6,8 @@ import { env } from '$env/dynamic/private';
 
 export const GET = async (event) => {
 	const google = createGoogleProvider(
-		env.GOOGLE_CLIENT_ID,
-		env.GOOGLE_CLIENT_SECRET,
+		env.GOOGLE_CLIENT_ID!,
+		env.GOOGLE_CLIENT_SECRET!,
 		event.url.origin
 	);
 
