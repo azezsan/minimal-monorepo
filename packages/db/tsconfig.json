@@ -5,5 +5,5 @@
     "types": ["@cloudflare/workers-types/2023-07-01"]
   },
   "include": ["./src"],
-  "exclude": ["./src/codegen.ts", "./src/migrate.ts"]
+  "exclude": ["./src/migrate.ts"]
 }
