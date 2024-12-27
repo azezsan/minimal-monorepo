@@ -9,6 +9,7 @@
         "check": "turbo run check"
     },
     "devDependencies": {
+        "@turbo/gen": "^2.3.3",
         "turbo": "^2.3.3"
     },
     "engines": {

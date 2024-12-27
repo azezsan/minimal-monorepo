@@ -1,0 +1,9 @@
+import { createInsertSchema, createSelectSchema } from "drizzle-typebox";
+
+import { {{name}}Table } from "./{{name}}";
+
+export const insert{{capitalize (singularize name)}}Schema = createInsertSchema({{name}}Table);
+export const select{{capitalize (singularize name)}}Schema = createSelectSchema({{name}}Table);
+
+export type Insert{{capitalize (singularize name)}} = typeof insert{{capitalize (singularize name)}}Schema.static;
+export type {{capitalize (singularize name)}} = typeof select{{capitalize (singularize name)}}Schema.static;
