@@ -270,6 +270,21 @@ importers:
         specifier: 'catalog:'
         version: 5.7.2
 
+  packages/ui2:
+    devDependencies:
+      '@acme/eslint-config':
+        specifier: workspace:*
+        version: link:../../tooling/eslint
+      '@acme/prettier-config':
+        specifier: workspace:*
+        version: link:../../tooling/prettier
+      '@acme/tsconfig':
+        specifier: workspace:*
+        version: link:../../tooling/typescript
+      typescript:
+        specifier: 'catalog:'
+        version: 5.7.2
+
   tooling/eslint:
     devDependencies:
       '@acme/tsconfig':
