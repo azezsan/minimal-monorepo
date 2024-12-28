@@ -9,7 +9,7 @@
     "preview": "bun run build && wrangler dev",
     "clean": "git clean -xdf .cache .wrangler .turbo dist node_modules",
     "lint": "eslint",
-    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "format": "prettier --check . !**/*.hbs --ignore-path ../../.gitignore",
     "typecheck": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "typecheck:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "cf-typegen": "wrangler types && mv worker-configuration.d.ts src/"

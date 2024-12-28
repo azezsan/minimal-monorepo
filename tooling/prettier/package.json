@@ -8,8 +8,8 @@
   },
   "scripts": {
     "clean": "git clean -xdf .cache .turbo node_modules",
-    "format": "prettier --write .",
-    "check": "tsc --noEmit"
+    "format": "prettier --check . !**/*.hbs --ignore-path ../../.gitignore",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "devDependencies": {
     "@acme/tsconfig": "workspace:*",
