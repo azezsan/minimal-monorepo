@@ -1,22 +1,24 @@
 {
   "name": "@acme/{{ name }}",
+  "version": "0.0.0",
   "private": true,
-  "version": "0.1.0",
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
   },
   "scripts": {
     "build": "tsc",
-    "clean": "git clean -xdf .cache .turbo dist node_modules",
-    "dev": "tsc --watch",
-    "lint": "eslint . && prettier --check . --ignore-path ../../.gitignore",
-    "format": "prettier --write .",
+    "clean": "git clean -xdf .cache .wrangler .turbo dist node_modules",
+    "dev": "tsc",
+    "lint": "eslint",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "devDependencies": {
+    "@acme/prettier-config": "workspace:*",
     "@acme/eslint-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "typescript": "catalog:"
-  }
+  },
+  "prettier": "@acme/prettier-config"
 }
