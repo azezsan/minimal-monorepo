@@ -54,6 +54,9 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
+      '@acme/prettier-config':
+        specifier: workspace:*
+        version: link:../../tooling/prettier
       '@acme/rpc':
         specifier: workspace:*
         version: link:../../packages/rpc
