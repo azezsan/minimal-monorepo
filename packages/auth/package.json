@@ -1,5 +1,6 @@
 {
   "name": "@acme/auth",
+  "version": "0.0.0",
   "private": true,
   "type": "module",
   "exports": {
@@ -10,10 +11,11 @@
   },
   "scripts": {
     "build": "tsc",
-    "dev": "tsc --watch",
-    "lint": "eslint . && prettier --check . --ignore-path ../../.gitignore",
-    "format": "prettier --write .",
-    "check": "tsc --noEmit"
+    "clean": "git clean -xdf .cache .wrangler .turbo dist node_modules",
+    "dev": "tsc",
+    "lint": "eslint",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
     "@acme/db": "workspace:*",
@@ -22,10 +24,12 @@
     "arctic": "^2.3.2"
   },
   "devDependencies": {
-    "@acme/tsconfig": "workspace:*",
+    "@acme/prettier-config": "workspace:*",
     "@acme/eslint-config": "workspace:*",
+    "@acme/tsconfig": "workspace:*",
+    "typescript": "catalog:",
     "@cloudflare/workers-types": "catalog:",
-    "@sveltejs/kit": "^2.11.1",
-    "typescript": "catalog:"
-  }
+    "@sveltejs/kit": "^2.11.1"
+  },
+  "prettier": "@acme/prettier-config"
 }
