@@ -16,7 +16,9 @@
                 "dist/**"
             ]
         },
-        "clean": {},
+        "clean": {
+            "cache": false
+        },
         "lint": {},
         "format": {},
         "typecheck": {},
