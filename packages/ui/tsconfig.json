@@ -6,5 +6,6 @@
     "paths": {
       "@acme/ui/*": ["./src/*"]
     }
-  }
+  },
+  "exclude": ["postcss.config.mjs", "eslint.config.js", "tailwind.config.ts", "node_modules"]
 }
