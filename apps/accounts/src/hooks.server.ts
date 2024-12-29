@@ -22,7 +22,7 @@ const handleAuth: Handle = async ({ event, resolve }) => {
 		return resolve(event);
 	}
 
-	const sessionStore = initializeSessionStore(event.platform?.env.SESSIONS!);
+	const sessionStore = initializeSessionStore(event.platform.env.SESSIONS);
 
 	const { session } = await sessionStore.validateSessionToken(sessionToken);
 

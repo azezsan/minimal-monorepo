@@ -3,11 +3,17 @@ import { generateState, generateCodeVerifier } from 'arctic';
 import { createGoogleProvider } from '@acme/auth';
 import { dev } from '$app/environment';
 import { env } from '$env/dynamic/private';
+import type { RequestHandler } from './$types';
 
-export const GET = async (event) => {
+export const GET: RequestHandler = (event) => {
+
+	if (!env.GOOGLE_CLIENT_ID || !env.GOOGLE_CLIENT_SECRET) {
+		throw new Error('Missing Google client ID or client secret');
+	}
+
 	const google = createGoogleProvider(
-		env.GOOGLE_CLIENT_ID!,
-		env.GOOGLE_CLIENT_SECRET!,
+		env.GOOGLE_CLIENT_ID,
+		env.GOOGLE_CLIENT_SECRET,
 		event.url.origin
 	);
 

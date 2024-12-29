@@ -3,13 +3,24 @@ import { createGoogleProvider, initializeSessionStore, setSessionTokenCookie } f
 import { usersTable, oauthAccountsTable, eq, sql, initializeD1 } from '@acme/db';
 import { decodeIdToken } from 'arctic';
 
-import type { RequestEvent } from '@sveltejs/kit';
 import type { OAuth2Tokens } from 'arctic';
 import type { DrizzleD1Database, schema } from '@acme/db';
 import { customAlphabet } from 'nanoid';
 import { redirect } from '@sveltejs/kit';
+import type { RequestHandler } from './$types';
 
-export async function GET(event: RequestEvent): Promise<Response> {
+export const GET: RequestHandler = async (event) => {
+
+	if (!event.platform) {
+		return new Response(null, {
+			status: 400
+		});
+	}
+
+	if (!env.GOOGLE_CLIENT_ID || !env.GOOGLE_CLIENT_SECRET) {
+		throw new Error('Missing Google client ID or client secret');
+	}
+
 	const code = event.url.searchParams.get('code');
 	const state = event.url.searchParams.get('state');
 	const storedState = event.cookies.get('google_oauth_state') ?? null;
@@ -25,14 +36,14 @@ export async function GET(event: RequestEvent): Promise<Response> {
 
 	let tokens: OAuth2Tokens;
 	const google = createGoogleProvider(
-		env.GOOGLE_CLIENT_ID!,
-		env.GOOGLE_CLIENT_SECRET!,
+		env.GOOGLE_CLIENT_ID,
+		env.GOOGLE_CLIENT_SECRET,
 		event.url.origin
 	);
 
 	try {
 		tokens = await google.validateAuthorizationCode(code, codeVerifier);
-	} catch (e) {
+	} catch {
 		// Invalid code or client credentials
 		return new Response(null, {
 			status: 400
@@ -42,9 +53,9 @@ export async function GET(event: RequestEvent): Promise<Response> {
 	const claims = decodeIdToken(tokens.idToken()) as GoogleUserClaims;
 
 	// TODO: Replace this with your own DB query.
-	const insertedUser = await upsertUser(claims, initializeD1(event.platform?.env.DB!));
+	const insertedUser = await upsertUser(claims, initializeD1(event.platform.env.DB));
 
-	const sessionStore = initializeSessionStore(event.platform?.env.SESSIONS!);
+	const sessionStore = initializeSessionStore(event.platform.env.SESSIONS);
 
 	const { sessionToken, session } = await sessionStore.createSession(insertedUser[0][0].id);
 
