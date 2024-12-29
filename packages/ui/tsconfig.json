@@ -1,4 +1,5 @@
 {
+  "extends": "@acme/tsconfig/base.json",
   "compilerOptions": {
     "esModuleInterop": true,
     "baseUrl": ".",
