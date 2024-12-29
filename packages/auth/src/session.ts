@@ -5,10 +5,10 @@ export type SessionValidationResult =
   | { sessionId: string; session: Session }
   | { sessionId: null; session: null };
 
-export type Session = {
+export interface Session {
   userId: number;
   expiresAt: Date | string;
-};
+}
 
 export class SessionStore {
   constructor(private kv: KVNamespace) {}
