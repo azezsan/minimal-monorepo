@@ -3,8 +3,8 @@
  * we "need" to type some of the plugins manually :(
  */
 
-declare module 'eslint-plugin-import' {
-  import type { Linter, Rule } from 'eslint';
+declare module "eslint-plugin-import" {
+  import type { Linter, Rule } from "eslint";
 
   export const configs: {
     recommended: { rules: Linter.RulesRecord };

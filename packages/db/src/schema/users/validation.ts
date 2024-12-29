@@ -1,6 +1,6 @@
-import { createInsertSchema, createSelectSchema } from 'drizzle-typebox';
+import { createInsertSchema, createSelectSchema } from "drizzle-typebox";
 
-import { usersTable } from './users';
+import { usersTable } from "./users";
 
 export const insertUserSchema = createInsertSchema(usersTable);
 export const selectUserSchema = createSelectSchema(usersTable);

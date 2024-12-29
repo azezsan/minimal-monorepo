@@ -5,7 +5,7 @@ Shared Drizzle ORM package for database management.
 ## Usage
 
 ```ts
-import { initializeD1, usersTable } from '@acme/db';
+import { initializeD1, usersTable } from "@acme/db";
 
 const db = initializeD1(env.D1Database);
 const users = await db.select().from(usersTable).all();

@@ -1,14 +1,13 @@
-import type { Config } from 'drizzle-kit';
-
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
+import type { Config } from "drizzle-kit";
 
 function getLocalD1DB() {
   try {
-    const basePath = path.resolve('../../v3');
+    const basePath = path.resolve("../../v3");
     const dbFile = fs
-      .readdirSync(basePath, { encoding: 'utf-8', recursive: true })
-      .find((f) => f.endsWith('.sqlite'));
+      .readdirSync(basePath, { encoding: "utf-8", recursive: true })
+      .find((f) => f.endsWith(".sqlite"));
 
     if (!dbFile) {
       throw new Error(`.sqlite file not found in ${basePath}`);
@@ -22,15 +21,15 @@ function getLocalD1DB() {
 }
 
 export default {
-  dialect: 'sqlite',
-  out: './drizzle',
-  schema: './src/schema/index.ts',
+  dialect: "sqlite",
+  out: "./drizzle",
+  schema: "./src/schema/index.ts",
   strict: true,
-  ...(process.argv[2] === 'studio'
+  ...(process.argv[2] === "studio"
     ? {
         dbCredentials: {
-          url: getLocalD1DB()
-        }
+          url: getLocalD1DB(),
+        },
       }
-    : {})
+    : {}),
 } satisfies Config;

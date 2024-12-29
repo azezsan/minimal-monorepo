@@ -1,30 +1,31 @@
-import svelte from 'eslint-plugin-svelte';
-import globals from 'globals';
-import ts from 'typescript-eslint';
-import baseConfig from './base.js';
+import svelte from "eslint-plugin-svelte";
+import globals from "globals";
+import ts from "typescript-eslint";
+
+import baseConfig from "./base.js";
 
 export default ts.config(
   ...baseConfig,
-  ...svelte.configs['flat/recommended'],
-  ...svelte.configs['flat/prettier'],
+  ...svelte.configs["flat/recommended"],
+  ...svelte.configs["flat/prettier"],
   {
     languageOptions: {
       globals: {
         ...globals.browser,
-        ...globals.node
-      }
-    }
+        ...globals.node,
+      },
+    },
   },
   {
-    files: ['**/*.svelte'],
+    files: ["**/*.svelte"],
 
     languageOptions: {
       parserOptions: {
-        parser: ts.parser
-      }
-    }
+        parser: ts.parser,
+      },
+    },
   },
   {
-    ignores: ['build/', '.svelte-kit/', 'src/lib/paraglide/']
-  }
+    ignores: ["build/", ".svelte-kit/", "src/lib/paraglide/"],
+  },
 );

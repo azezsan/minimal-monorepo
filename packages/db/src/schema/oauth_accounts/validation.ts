@@ -1,6 +1,6 @@
-import { createInsertSchema, createSelectSchema } from 'drizzle-typebox';
+import { createInsertSchema, createSelectSchema } from "drizzle-typebox";
 
-import { oauthAccountsTable } from './oauthAccounts';
+import { oauthAccountsTable } from "./oauthAccounts";
 
 export const insertOauthAccountSchema = createInsertSchema(oauthAccountsTable);
 export const selectOauthAccountSchema = createSelectSchema(oauthAccountsTable);
