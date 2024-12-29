@@ -1,6 +1,7 @@
 import { redirect, error as err } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
 
-export const load = async (event) => {
+export const load: PageServerLoad = async (event) => {
 	if (!event.locals.session) {
 		redirect(302, '/login');
 	}
