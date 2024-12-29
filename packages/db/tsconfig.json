@@ -3,6 +3,6 @@
   "compilerOptions": {
     "types": ["@cloudflare/workers-types/2023-07-01"]
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "src/migrate.ts"]
+  "include": ["*.ts", "src"],
+  "exclude": ["node_modules"]
 }
