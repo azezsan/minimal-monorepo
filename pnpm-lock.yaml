@@ -73,7 +73,7 @@ importers:
         specifier: ^4.8.0
         version: 4.9.0(@sveltejs/kit@2.15.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.5(@types/node@22.10.2)(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.15.0)(vite@6.0.5(@types/node@22.10.2)(jiti@1.21.7)(yaml@2.6.1)))(wrangler@3.99.0(@cloudflare/workers-types@4.20241218.0))
       '@sveltejs/kit':
-        specifier: ^2.9.0
+        specifier: ^2.15.0
         version: 2.15.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.5(@types/node@22.10.2)(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.15.0)(vite@6.0.5(@types/node@22.10.2)(jiti@1.21.7)(yaml@2.6.1))
       '@sveltejs/vite-plugin-svelte':
         specifier: ^5.0.1
@@ -88,13 +88,13 @@ importers:
         specifier: ^3.3.2
         version: 3.3.2(prettier@3.4.2)(svelte@5.15.0)
       svelte:
-        specifier: ^5.4.0
+        specifier: ^5.12.0
         version: 5.15.0
       svelte-check:
         specifier: ^4.1.0
         version: 4.1.1(svelte@5.15.0)(typescript@5.7.2)
       tailwindcss:
-        specifier: ^3.4.15
+        specifier: ^3.4.16
         version: 3.4.17(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.7.2))
       typescript:
         specifier: 'catalog:'
@@ -165,7 +165,7 @@ importers:
         specifier: 'catalog:'
         version: 4.20241218.0
       '@sveltejs/kit':
-        specifier: ^2.11.1
+        specifier: ^2.15.0
         version: 2.15.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.5(@types/node@22.10.2)(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.15.0)(vite@6.0.5(@types/node@22.10.2)(jiti@1.21.7)(yaml@2.6.1))
       typescript:
         specifier: 'catalog:'

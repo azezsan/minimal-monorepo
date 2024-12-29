@@ -22,12 +22,12 @@
     "@elysiajs/eden": "^1.2.0"
   },
   "devDependencies": {
-    "@acme/prettier-config": "workspace:*",
     "@acme/eslint-config": "workspace:*",
+    "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
-    "typescript": "catalog:",
     "@cloudflare/workers-types": "catalog:",
-    "elysia": "^1.2.2"
+    "elysia": "^1.2.2",
+    "typescript": "catalog:"
   },
   "prettier": "@acme/prettier-config"
 }

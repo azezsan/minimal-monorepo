@@ -21,11 +21,11 @@
     "elysia": "^1.2.2"
   },
   "devDependencies": {
-    "@acme/prettier-config": "workspace:*",
     "@acme/eslint-config": "workspace:*",
+    "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
-    "typescript": "catalog:",
     "@cloudflare/workers-types": "catalog:",
+    "typescript": "catalog:",
     "wrangler": "catalog:"
   },
   "module": "src/index.js",

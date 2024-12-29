@@ -17,9 +17,8 @@
     "./lib/components/ui/*": "./src/lib/components/ui/*/index.ts"
   },
   "devDependencies": {
-    "@acme/prettier-config": "workspace:*",
     "@acme/eslint-config": "workspace:*",
-    "typescript": "catalog:",
+    "@acme/prettier-config": "workspace:*",
     "@sveltejs/kit": "^2.15.0",
     "bits-ui": "^1.0.0-next.64",
     "clsx": "^2.1.1",
@@ -28,7 +27,8 @@
     "tailwind-merge": "^2.5.5",
     "tailwind-variants": "^0.3.0",
     "tailwindcss": "^3.4.16",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "catalog:"
   },
   "dependencies": {
     "@inlang/paraglide-sveltekit": "^0.12.1"

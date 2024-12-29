@@ -25,14 +25,14 @@
     "drizzle-typebox": "^0.2.0"
   },
   "devDependencies": {
-    "@acme/prettier-config": "workspace:*",
     "@acme/eslint-config": "workspace:*",
+    "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
-    "typescript": "catalog:",
     "@clack/prompts": "^0.8.2",
     "@cloudflare/workers-types": "catalog:",
     "better-sqlite3": "^11.7.0",
     "drizzle-kit": "^0.30.0",
+    "typescript": "catalog:",
     "wrangler": "catalog:"
   },
   "prettier": "@acme/prettier-config"
