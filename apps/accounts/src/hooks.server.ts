@@ -12,6 +12,7 @@ import { createEden } from "@acme/rpc";
 
 const handleParaglide: Handle = i18n.handle();
 
+// eslint-disable-next-line @typescript-eslint/unbound-method
 const handleAuth: Handle = async ({ event, resolve }) => {
   if (!event.platform) {
     return resolve(event);
