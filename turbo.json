@@ -6,9 +6,8 @@
       "outputs": [".cache/**", "dist/**", ".svelte-kit/**"]
     },
     "dev": {
-      "dependsOn": ["^dev"],
       "cache": false,
-      "persistent": false
+      "persistent": true
     },
     "format": {
       "outputs": [".cache/.prettiercache"],
