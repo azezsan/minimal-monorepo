@@ -1,102 +1,137 @@
-import { env } from '$env/dynamic/private';
-import { createGoogleProvider, initializeSessionStore, setSessionTokenCookie } from '@acme/auth';
-import { usersTable, oauthAccountsTable, eq, sql, initializeD1 } from '@acme/db';
-import { decodeIdToken } from 'arctic';
+import type { OAuth2Tokens } from "arctic";
+import { redirect } from "@sveltejs/kit";
+import { env } from "$env/dynamic/private";
+import { decodeIdToken } from "arctic";
+import { customAlphabet } from "nanoid";
 
-import type { RequestEvent } from '@sveltejs/kit';
-import type { OAuth2Tokens } from 'arctic';
-import type { DrizzleD1Database, schema } from '@acme/db';
-import { customAlphabet } from 'nanoid';
-import { redirect } from '@sveltejs/kit';
+import type { DrizzleD1Database, schema } from "@acme/db";
+import {
+  createGoogleProvider,
+  initializeSessionStore,
+  setSessionTokenCookie,
+} from "@acme/auth";
+import {
+  eq,
+  initializeD1,
+  oauthAccountsTable,
+  sql,
+  usersTable,
+} from "@acme/db";
 
-export async function GET(event: RequestEvent): Promise<Response> {
-	const code = event.url.searchParams.get('code');
-	const state = event.url.searchParams.get('state');
-	const storedState = event.cookies.get('google_oauth_state') ?? null;
-	const codeVerifier = event.cookies.get('google_code_verifier') ?? null;
-	if (!code || !state || !storedState || !codeVerifier || state !== storedState) {
-		return new Response(null, {
-			status: 400
-		});
-	}
+import type { RequestHandler } from "./$types";
 
-	event.cookies.delete('google_oauth_state', { path: '/' });
-	event.cookies.delete('google_code_verifier', { path: '/' });
+export const GET: RequestHandler = async (event) => {
+  if (!event.platform) {
+    return new Response(null, {
+      status: 400,
+    });
+  }
 
-	let tokens: OAuth2Tokens;
-	const google = createGoogleProvider(
-		env.GOOGLE_CLIENT_ID!,
-		env.GOOGLE_CLIENT_SECRET!,
-		event.url.origin
-	);
+  if (!env.GOOGLE_CLIENT_ID || !env.GOOGLE_CLIENT_SECRET) {
+    throw new Error("Missing Google client ID or client secret");
+  }
 
-	try {
-		tokens = await google.validateAuthorizationCode(code, codeVerifier);
-	} catch (e) {
-		// Invalid code or client credentials
-		return new Response(null, {
-			status: 400
-		});
-	}
+  const code = event.url.searchParams.get("code");
+  const state = event.url.searchParams.get("state");
+  const storedState = event.cookies.get("google_oauth_state") ?? null;
+  const codeVerifier = event.cookies.get("google_code_verifier") ?? null;
+  if (
+    !code ||
+    !state ||
+    !storedState ||
+    !codeVerifier ||
+    state !== storedState
+  ) {
+    return new Response(null, {
+      status: 400,
+    });
+  }
 
-	const claims = decodeIdToken(tokens.idToken()) as GoogleUserClaims;
+  event.cookies.delete("google_oauth_state", { path: "/" });
+  event.cookies.delete("google_code_verifier", { path: "/" });
 
-	// TODO: Replace this with your own DB query.
-	const insertedUser = await upsertUser(claims, initializeD1(event.platform?.env.DB!));
+  let tokens: OAuth2Tokens;
+  const google = createGoogleProvider(
+    env.GOOGLE_CLIENT_ID,
+    env.GOOGLE_CLIENT_SECRET,
+    event.url.origin,
+  );
 
-	const sessionStore = initializeSessionStore(event.platform?.env.SESSIONS!);
+  try {
+    tokens = await google.validateAuthorizationCode(code, codeVerifier);
+  } catch {
+    // Invalid code or client credentials
+    return new Response(null, {
+      status: 400,
+    });
+  }
 
-	const { sessionToken, session } = await sessionStore.createSession(insertedUser[0][0].id);
+  const claims = decodeIdToken(tokens.idToken()) as GoogleUserClaims;
 
-	setSessionTokenCookie(event, sessionToken, new Date(session.expiresAt));
+  // TODO: Replace this with your own DB query.
+  const insertedUser = await upsertUser(
+    claims,
+    initializeD1(event.platform.env.DB),
+  );
 
-	redirect(302, '/');
-}
+  const sessionStore = initializeSessionStore(event.platform.env.SESSIONS);
 
-const upsertUser = async (claims: GoogleUserClaims, db: DrizzleD1Database<typeof schema>) => {
-	const nanoid = customAlphabet('0123456789abcdefghijklmnopqrstuvwxyz', 12);
+  const { sessionToken, session } = await sessionStore.createSession(
+    insertedUser[0][0].id,
+  );
 
-	const usersQuery = db
-		.select({ id: usersTable.id })
-		.from(usersTable)
-		.where(eq(usersTable.email, claims.email));
+  setSessionTokenCookie(event, sessionToken, new Date(session.expiresAt));
 
-	return await db.batch([
-		db
-			.insert(usersTable)
-			.values({
-				publicId: nanoid(),
-				name: claims.name,
-				email: claims.email
-			})
-			.onConflictDoUpdate({
-				target: usersTable.email,
-				set: { id: sql`id` }
-			})
-			.returning({ id: usersTable.id }),
-		db
-			.insert(oauthAccountsTable)
-			.values({
-				providerId: 'google',
-				providerUserId: claims.sub,
-				userId: sql`${usersQuery}`
-			})
-			.onConflictDoNothing()
-	]);
+  redirect(302, "/");
+};
+
+const upsertUser = async (
+  claims: GoogleUserClaims,
+  db: DrizzleD1Database<typeof schema>,
+) => {
+  const nanoid = customAlphabet("0123456789abcdefghijklmnopqrstuvwxyz", 12);
+
+  const usersQuery = db
+    .select({ id: usersTable.id })
+    .from(usersTable)
+    .where(eq(usersTable.email, claims.email));
+
+  return await db.batch([
+    db
+      .insert(usersTable)
+      .values({
+        publicId: nanoid(),
+        name: claims.name,
+        email: claims.email,
+      })
+      .onConflictDoUpdate({
+        target: usersTable.email,
+        set: { id: sql`id` },
+      })
+      .returning({ id: usersTable.id }),
+    db
+      .insert(oauthAccountsTable)
+      .values({
+        providerId: "google",
+        providerUserId: claims.sub,
+        userId: sql`${usersQuery}`,
+      })
+      .onConflictDoNothing(),
+  ]);
 };
 
 interface GoogleUserClaims {
-	iss: string;
-	azp: string;
-	aud: string;
-	sub: string;
-	email: string;
-	email_verified: boolean;
-	at_hash: string;
-	name: string;
-	picture: string;
-	given_name: string;
-	family_name: string;
-	iat: number;
-	exp: number;
+  iss: string;
+  azp: string;
+  aud: string;
+  sub: string;
+  email: string;
+  email_verified: boolean;
+  at_hash: string;
+  name: string;
+  picture: string;
+  given_name: string;
+  family_name: string;
+  iat: number;
+  exp: number;
 }

@@ -1,31 +1,31 @@
 {
-    "$schema": "https://json.schemastore.org/tsconfig",
-    "compilerOptions": {
-        /* Base Options: */
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "target": "ESNext",
-        "module": "ESNext",
-        "moduleResolution": "bundler",
-        "allowJs": true,
-        "resolveJsonModule": true,
-        "moduleDetection": "force",
-        "isolatedModules": true,
-        /* Strictness */
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        // "noUncheckedIndexedAccess": true,
-        "noImplicitOverride": true,
-        "checkJs": true,
-        /** Keep TSC performant in monorepos */
-        "incremental": true,
-        "disableSourceOfProjectReferenceRedirect": true,
-        "tsBuildInfoFile": "${configDir}/.cache/tsbuildinfo.json"
-    },
-    "exclude": [
-        "${configDir}/node_modules",
-        "${configDir}/dist",
-        "${configDir}/.svelte-kit",
-        "${configDir}/.wrangler"
-    ]
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    /* Base Options: */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+
+    /* Strictness */
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitOverride": true,
+    "checkJs": true,
+
+    /** Keep TSC performant in monorepos */
+    "incremental": true,
+    "disableSourceOfProjectReferenceRedirect": true,
+    "tsBuildInfoFile": "${configDir}/.cache/tsbuildinfo.json",
+
+    /** Transpile using Bundler (not tsc) */
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true
+  },
+  "exclude": ["node_modules", "build", "dist", "v3"]
 }

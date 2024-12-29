@@ -1,23 +1,22 @@
 {
-  "name": "@acme/{{ name }}",
+  "name": "@acme/prettier-config",
   "version": "0.0.0",
-  "private": true,
   "type": "module",
+  "private": true,
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./index.js"
   },
   "scripts": {
-    "build": "tsc",
-    "clean": "git clean -xdf .cache .wrangler .turbo dist node_modules",
-    "dev": "tsc",
-    "lint": "eslint",
+    "clean": "git clean -xdf .cache .turbo node_modules",
     "format": "prettier --check . !**/*.hbs --ignore-path ../../.gitignore",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "devDependencies": {
-    "@acme/prettier-config": "workspace:*",
-    "@acme/eslint-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.0",
+    "prettier": "catalog:",
+    "prettier-plugin-svelte": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
     "typescript": "catalog:"
   },
   "prettier": "@acme/prettier-config"

@@ -1,4 +1,9 @@
-import { config as baseConfig } from '@acme/eslint-config/base';
+import baseConfig from "@acme/eslint-config/base";
 
-/** @type {import("eslint").Linter.Config} */
-export default baseConfig;
+/** @type {import('typescript-eslint').Config} */
+export default [
+  {
+    ignores: [],
+  },
+  ...baseConfig,
+];

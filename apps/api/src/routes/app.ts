@@ -1,14 +1,15 @@
-import { eq, initializeD1, selectUserSchema, usersTable } from '@acme/db';
-import { Elysia, NotFoundError, t } from 'elysia';
-import swagger from '@elysiajs/swagger';
+import swagger from "@elysiajs/swagger";
+import { Elysia, NotFoundError, t } from "elysia";
+
+import { eq, initializeD1, selectUserSchema, usersTable } from "@acme/db";
 
 export const app = new Elysia({ aot: false })
   .use(swagger())
-  .decorate('env', null as unknown as CloudflareBindings)
-  .decorate('executionCtx', null as unknown as ExecutionContext)
-  .get('/', () => 'Hello Elysia')
+  .decorate("env", null as unknown as CloudflareBindings)
+  .decorate("executionCtx", null as unknown as ExecutionContext)
+  .get("/", () => "Hello Elysia")
   .get(
-    '/users',
+    "/users",
     async ({ env }) => {
       const db = initializeD1(env.DB);
       const users = await db.select().from(usersTable).all();
@@ -18,11 +19,11 @@ export const app = new Elysia({ aot: false })
       return users;
     },
     {
-      response: t.Array(selectUserSchema)
-    }
+      response: t.Array(selectUserSchema),
+    },
   )
   .get(
-    '/users/:id',
+    "/users/:id",
     async ({ params, env }) => {
       const db = initializeD1(env.DB);
       const user = await db
@@ -36,6 +37,6 @@ export const app = new Elysia({ aot: false })
       return user;
     },
     {
-      response: selectUserSchema
-    }
+      response: selectUserSchema,
+    },
   );

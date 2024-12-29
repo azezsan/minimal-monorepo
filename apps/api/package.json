@@ -1,6 +1,7 @@
 {
   "name": "@acme/api",
   "version": "1.0.50",
+  "private": true,
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
@@ -9,9 +10,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "wrangler dev --persist-to ../../",
     "cf-typegen": "wrangler types --env-interface CloudflareBindings && mv worker-configuration.d.ts src/",
-    "lint": "eslint . && prettier --check . --ignore-path ../../.gitignore",
-    "format": "prettier --write .",
-    "check": "tsc --noEmit"
+    "clean": "git clean -xdf .cache .wrangler .turbo dist node_modules",
+    "lint": "eslint",
+    "format": "prettier --check . !**/*.hbs --ignore-path ../../.gitignore",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
     "@acme/db": "workspace:*",
@@ -20,10 +22,12 @@
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
+    "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "@cloudflare/workers-types": "catalog:",
     "typescript": "catalog:",
     "wrangler": "catalog:"
   },
-  "module": "src/index.js"
+  "module": "src/index.js",
+  "prettier": "@acme/prettier-config"
 }

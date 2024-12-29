@@ -1,2 +1,2 @@
-export * from './oauthAccounts';
-export * from './validation';
+export * from "./oauthAccounts";
+export * from "./validation";

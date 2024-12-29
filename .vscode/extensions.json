@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "yoavbls.pretty-ts-errors",
+      "bradlc.vscode-tailwindcss",
+      "inlang.vs-code-extension",
+      "svelte.svelte-vscode",
+      "usernamehw.errorlens",
+      "tamasfe.even-better-toml"
+    ]
+}

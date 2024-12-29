@@ -1,13 +1,17 @@
-import { redirect, error as err } from '@sveltejs/kit';
+import { error as err, redirect } from "@sveltejs/kit";
 
-export const load = async (event) => {
-	if (!event.locals.session) {
-		redirect(302, '/login');
-	}
+import type { PageServerLoad } from "./$types";
 
-	return {
-		user: await event.locals.api.users[event.locals.session.userId]
-			.get()
-			.then(({ data, error }) => (error ? err(error.status, error.message) : data))
-	};
+export const load: PageServerLoad = async (event) => {
+  if (!event.locals.session) {
+    redirect(302, "/login");
+  }
+
+  return {
+    user: await event.locals.api.users[event.locals.session.userId]
+      .get()
+      .then(({ data, error }) =>
+        error ? err(error.status, error.message) : data,
+      ),
+  };
 };

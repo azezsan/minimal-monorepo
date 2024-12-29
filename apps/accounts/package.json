@@ -1,42 +1,45 @@
 {
-	"name": "@acme/accounts",
-	"private": true,
-	"version": "0.0.1",
-	"type": "module",
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "bun run build && wrangler dev",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "eslint . && prettier --check . --ignore-path ../../.gitignore",
-		"format": "prettier --write .",
-		"cf-typegen": "wrangler types && mv worker-configuration.d.ts src/"
-	},
-	"devDependencies": {
-		"@acme/auth": "workspace:*",
-		"@acme/db": "workspace:*",
-		"@acme/eslint-config": "workspace:*",
-		"@acme/rpc": "workspace:*",
-		"@acme/tsconfig": "workspace:*",
-		"@acme/ui": "workspace:*",
-		"@cloudflare/workers-types": "catalog:",
-		"@sveltejs/adapter-cloudflare": "^4.8.0",
-		"@sveltejs/kit": "^2.9.0",
-		"@sveltejs/vite-plugin-svelte": "^5.0.1",
-		"autoprefixer": "^10.4.20",
-		"prettier": "^3.4.1",
-		"prettier-plugin-svelte": "^3.3.2",
-		"svelte": "^5.4.0",
-		"svelte-check": "^4.1.0",
-		"tailwindcss": "^3.4.15",
-		"typescript": "catalog:",
-		"vite": "^6.0.2",
-		"wrangler": "catalog:"
-	},
-	"dependencies": {
-		"@inlang/paraglide-sveltekit": "^0.12.1",
-		"arctic": "^2.3.2",
-		"nanoid": "^5.0.9"
-	}
+  "name": "@acme/accounts",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "bun run build && wrangler dev",
+    "clean": "git clean -xdf .cache .wrangler .turbo dist node_modules",
+    "lint": "eslint",
+    "format": "prettier --check . !**/*.hbs --ignore-path ../../.gitignore",
+    "typecheck": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "typecheck:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "cf-typegen": "wrangler types && mv worker-configuration.d.ts src/"
+  },
+  "devDependencies": {
+    "@acme/auth": "workspace:*",
+    "@acme/db": "workspace:*",
+    "@acme/eslint-config": "workspace:*",
+    "@acme/prettier-config": "workspace:*",
+    "@acme/rpc": "workspace:*",
+    "@acme/tsconfig": "workspace:*",
+    "@acme/ui": "workspace:*",
+    "@cloudflare/workers-types": "catalog:",
+    "@sveltejs/adapter-cloudflare": "^4.8.0",
+    "@sveltejs/kit": "^2.15.0",
+    "@sveltejs/vite-plugin-svelte": "^5.0.1",
+    "autoprefixer": "^10.4.20",
+    "prettier": "^3.4.1",
+    "prettier-plugin-svelte": "^3.3.2",
+    "svelte": "^5.12.0",
+    "svelte-check": "^4.1.0",
+    "tailwindcss": "^3.4.16",
+    "typescript": "catalog:",
+    "vite": "^6.0.2",
+    "wrangler": "catalog:"
+  },
+  "dependencies": {
+    "@inlang/paraglide-sveltekit": "^0.12.1",
+    "arctic": "^2.3.2",
+    "nanoid": "^5.0.9"
+  },
+  "prettier": "@acme/prettier-config"
 }

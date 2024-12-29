@@ -1,15 +1,21 @@
+// eslint-disable-next-line @typescript-eslint/triple-slash-reference
 /// <reference path="./worker-configuration.d.ts" />
-import { Elysia } from 'elysia';
-import { app } from './routes/app';
+import { Elysia } from "elysia";
+
+import { app } from "./routes/app";
 
 export default {
-  async fetch(request: Request, env: CloudflareBindings, ctx: ExecutionContext) {
+  async fetch(
+    request: Request,
+    env: CloudflareBindings,
+    ctx: ExecutionContext,
+  ) {
     return await new Elysia({ aot: false })
-      .decorate('executionCtx', ctx)
-      .decorate('env', env)
+      .decorate("executionCtx", ctx)
+      .decorate("env", env)
       .use(app)
       .handle(request);
-  }
+  },
 };
 
 export type App = typeof app;

@@ -8,14 +8,14 @@ Shadcn-Svelte component library.
 
 ```ts
 // tailwind.config.ts
-export * from '@acme/ui/tailwind.config';
+export * from "@acme/ui/tailwind.config";
 ```
 
 2. Configure PostCSS:
 
 ```js
 // postcss.config.mjs
-export { default } from '@acme/ui/postcss.config';
+export { default } from "@acme/ui/postcss.config";
 ```
 
 3. Import styles:
@@ -23,7 +23,7 @@ export { default } from '@acme/ui/postcss.config';
 ```html
 <!-- +layout.svelte -->
 <script lang="ts">
-  import '@acme/ui/app.css';
+  import "@acme/ui/app.css";
 </script>
 ```
 

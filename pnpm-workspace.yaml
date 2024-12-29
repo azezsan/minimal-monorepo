@@ -5,5 +5,6 @@ packages:
 
 catalog:
   typescript: ^5.7.2
+  prettier: ^3.4.1
   wrangler: ^3.96.0
   "@cloudflare/workers-types": ^4.20241216.0

@@ -1,5 +1,6 @@
 {
   "name": "@acme/db",
+  "version": "0.0.0",
   "private": true,
   "type": "module",
   "exports": {
@@ -10,26 +11,29 @@
   },
   "scripts": {
     "build": "tsc",
-    "dev": "tsc --watch",
+    "clean": "git clean -xdf .cache .wrangler .turbo dist node_modules",
+    "dev": "tsc",
+    "lint": "eslint",
+    "format": "prettier --check . !**/*.hbs --ignore-path ../../.gitignore",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
     "generate": "drizzle-kit generate",
-    "migrate": "bun run src/migrate.ts",
-    "studio": "drizzle-kit studio",
-    "lint": "eslint . && prettier --check . --ignore-path ../../.gitignore",
-    "format": "prettier --write .",
-    "check": "tsc --noEmit"
+    "migrate": "wrangler d1 migrations apply DB --local --persist-to ../../",
+    "migrate:remote": "wrangler d1 migrations apply DB --remote",
+    "studio": "drizzle-kit studio"
   },
   "dependencies": {
     "drizzle-orm": "^0.38.0",
     "drizzle-typebox": "^0.2.0"
   },
   "devDependencies": {
-    "@acme/tsconfig": "workspace:*",
     "@acme/eslint-config": "workspace:*",
-    "@clack/prompts": "^0.8.2",
+    "@acme/prettier-config": "workspace:*",
+    "@acme/tsconfig": "workspace:*",
     "@cloudflare/workers-types": "catalog:",
     "better-sqlite3": "^11.7.0",
     "drizzle-kit": "^0.30.0",
     "typescript": "catalog:",
     "wrangler": "catalog:"
-  }
+  },
+  "prettier": "@acme/prettier-config"
 }
