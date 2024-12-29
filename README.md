@@ -14,6 +14,7 @@ A lightweight monorepo template using SvelteKit, Elysia, and Cloudflare Workers.
   - `auth`: Lucia auth utilities
 
 - **tooling**
+  - `prettier`: Shared Prettier configuration
   - `eslint`: Shared ESLint configuration
   - `tsconfig`: Shared TypeScript configuration
 
