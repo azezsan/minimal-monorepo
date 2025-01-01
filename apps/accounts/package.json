@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "preview": "bun run build && wrangler dev",
+    "preview": "pnpm run build && wrangler pages dev",
     "clean": "git clean -xdf .cache .wrangler .turbo dist node_modules",
     "lint": "eslint",
     "format": "prettier --check . !**/*.hbs --ignore-path ../../.gitignore",
