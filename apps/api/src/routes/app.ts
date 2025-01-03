@@ -1,7 +1,7 @@
 import swagger from "@elysiajs/swagger";
 import { Elysia, NotFoundError, t } from "elysia";
 
-import { eq, initializeD1, selectUserSchema, usersTable } from "@acme/db";
+import { eq, initializeDB, selectUserSchema, usersTable } from "@acme/db";
 
 export const app = new Elysia({ aot: false })
   .use(swagger())
@@ -11,7 +11,7 @@ export const app = new Elysia({ aot: false })
   .get(
     "/users",
     async ({ env }) => {
-      const db = initializeD1(env.DB);
+      const db = initializeDB(env);
       const users = await db.select().from(usersTable).all();
       if (!users.length) {
         throw new NotFoundError();
@@ -25,7 +25,7 @@ export const app = new Elysia({ aot: false })
   .get(
     "/users/:id",
     async ({ params, env }) => {
-      const db = initializeD1(env.DB);
+      const db = initializeDB(env);
       const user = await db
         .select()
         .from(usersTable)
