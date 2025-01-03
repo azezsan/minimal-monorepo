@@ -30,8 +30,7 @@
     "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "drizzle-kit": "^0.30.0",
-    "typescript": "catalog:",
-    "wrangler": "catalog:"
+    "typescript": "catalog:"
   },
   "prettier": "@acme/prettier-config"
 }
