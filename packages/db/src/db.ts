@@ -1,6 +1,21 @@
-import type { D1Database } from "@cloudflare/workers-types";
-import { drizzle } from "drizzle-orm/d1";
+import { createClient } from "@libsql/client";
+import { drizzle } from "drizzle-orm/libsql";
 
 import * as schema from "./schema";
 
-export const initializeD1 = (env: D1Database) => drizzle(env, { schema });
+interface Env {
+  TURSO_AUTH_TOKEN?: string;
+  TURSO_URL?: string;
+}
+
+export const initializeDB = (env: Env) => {
+  const url = env.TURSO_URL?.trim();
+  if (!url) {
+    throw new Error("TURSO_URL is missing");
+  }
+  const authToken = env.TURSO_AUTH_TOKEN?.trim();
+  if (!authToken) {
+    throw new Error("TURSO_AUTH_TOKEN is missing");
+  }
+  return drizzle(createClient({ url, authToken }), { schema });
+};
