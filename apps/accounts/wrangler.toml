@@ -17,13 +17,6 @@ enabled = true
 binding = "API_WORKER"
 service = "api"
 
-# Bind a D1 database. D1 is Cloudflare’s native serverless SQL database.
-# Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#d1-databases
-[[d1_databases]]
-binding = "DB"
-database_name = "acme"
-database_id = "fe6b1cc7-1472-4299-b217-64d257a416ba"
-
 # Bind a KV Namespace. Use KV as persistent storage for small key-value pairs.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#kv-namespaces
 [[kv_namespaces]]
