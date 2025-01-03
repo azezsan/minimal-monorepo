@@ -17,11 +17,11 @@
     "format": "prettier --check . !**/*.hbs --ignore-path ../../.gitignore",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
     "generate": "drizzle-kit generate",
-    "migrate": "wrangler d1 migrations apply DB --local --persist-to ../../",
-    "migrate:remote": "wrangler d1 migrations apply DB --remote",
+    "migrate": "drizzle-kit migrate",
     "studio": "drizzle-kit studio"
   },
   "dependencies": {
+    "@libsql/client": "^0.14.0",
     "drizzle-orm": "^0.38.0",
     "drizzle-typebox": "^0.2.0"
   },
@@ -29,8 +29,6 @@
     "@acme/eslint-config": "workspace:*",
     "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
-    "@cloudflare/workers-types": "catalog:",
-    "better-sqlite3": "^11.7.0",
     "drizzle-kit": "^0.30.0",
     "typescript": "catalog:",
     "wrangler": "catalog:"

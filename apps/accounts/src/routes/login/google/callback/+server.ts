@@ -1,10 +1,9 @@
 import type { OAuth2Tokens } from "arctic";
 import { redirect } from "@sveltejs/kit";
-import { env } from "$env/dynamic/private";
 import { decodeIdToken } from "arctic";
 import { customAlphabet } from "nanoid";
 
-import type { DrizzleD1Database, schema } from "@acme/db";
+import type { LibSQLDatabase, schema } from "@acme/db";
 import {
   createGoogleProvider,
   initializeSessionStore,
@@ -12,7 +11,7 @@ import {
 } from "@acme/auth";
 import {
   eq,
-  initializeD1,
+  initializeDB,
   oauthAccountsTable,
   sql,
   usersTable,
@@ -25,10 +24,6 @@ export const GET: RequestHandler = async (event) => {
     return new Response(null, {
       status: 400,
     });
-  }
-
-  if (!env.GOOGLE_CLIENT_ID || !env.GOOGLE_CLIENT_SECRET) {
-    throw new Error("Missing Google client ID or client secret");
   }
 
   const code = event.url.searchParams.get("code");
@@ -51,11 +46,7 @@ export const GET: RequestHandler = async (event) => {
   event.cookies.delete("google_code_verifier", { path: "/" });
 
   let tokens: OAuth2Tokens;
-  const google = createGoogleProvider(
-    env.GOOGLE_CLIENT_ID,
-    env.GOOGLE_CLIENT_SECRET,
-    event.url.origin,
-  );
+  const google = createGoogleProvider(event.platform.env, event.url.origin);
 
   try {
     tokens = await google.validateAuthorizationCode(code, codeVerifier);
@@ -71,7 +62,7 @@ export const GET: RequestHandler = async (event) => {
   // TODO: Replace this with your own DB query.
   const insertedUser = await upsertUser(
     claims,
-    initializeD1(event.platform.env.DB),
+    initializeDB(event.platform.env),
   );
 
   const sessionStore = initializeSessionStore(event.platform.env.SESSIONS);
@@ -87,7 +78,7 @@ export const GET: RequestHandler = async (event) => {
 
 const upsertUser = async (
   claims: GoogleUserClaims,
-  db: DrizzleD1Database<typeof schema>,
+  db: LibSQLDatabase<typeof schema>,
 ) => {
   const nanoid = customAlphabet("0123456789abcdefghijklmnopqrstuvwxyz", 12);
 

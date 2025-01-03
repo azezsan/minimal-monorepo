@@ -1,6 +1,5 @@
 import { redirect } from "@sveltejs/kit";
 import { dev } from "$app/environment";
-import { env } from "$env/dynamic/private";
 import { generateCodeVerifier, generateState } from "arctic";
 
 import { createGoogleProvider } from "@acme/auth";
@@ -8,15 +7,13 @@ import { createGoogleProvider } from "@acme/auth";
 import type { RequestHandler } from "./$types";
 
 export const GET: RequestHandler = (event) => {
-  if (!env.GOOGLE_CLIENT_ID || !env.GOOGLE_CLIENT_SECRET) {
-    throw new Error("Missing Google client ID or client secret");
+  if (!event.platform) {
+    return new Response(null, {
+      status: 400,
+    });
   }
 
-  const google = createGoogleProvider(
-    env.GOOGLE_CLIENT_ID,
-    env.GOOGLE_CLIENT_SECRET,
-    event.url.origin,
-  );
+  const google = createGoogleProvider(event.platform.env, event.url.origin);
 
   const state = generateState();
   const codeVerifier = generateCodeVerifier();

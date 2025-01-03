@@ -1,35 +1,21 @@
-import fs from "fs";
-import path from "path";
 import type { Config } from "drizzle-kit";
 
-function getLocalD1DB() {
-  try {
-    const basePath = path.resolve("../../v3");
-    const dbFile = fs
-      .readdirSync(basePath, { encoding: "utf-8", recursive: true })
-      .find((f) => f.endsWith(".sqlite"));
-
-    if (!dbFile) {
-      throw new Error(`.sqlite file not found in ${basePath}`);
-    }
-
-    const url = path.resolve(basePath, dbFile);
-    return url;
-  } catch (err) {
-    throw err.message;
-  }
+const url = process.env.TURSO_URL?.trim();
+if (!url) {
+  throw new Error("TURSO_URL is missing");
+}
+const authToken = process.env.TURSO_AUTH_TOKEN?.trim();
+if (!authToken) {
+  throw new Error("TURSO_AUTH_TOKEN is missing");
 }
 
 export default {
-  dialect: "sqlite",
+  dialect: "turso",
   out: "./drizzle",
   schema: "./src/schema/index.ts",
+  dbCredentials: {
+    url,
+    authToken,
+  },
   strict: true,
-  ...(process.argv[2] === "studio"
-    ? {
-        dbCredentials: {
-          url: getLocalD1DB(),
-        },
-      }
-    : {}),
 } satisfies Config;
