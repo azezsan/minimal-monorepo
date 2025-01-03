@@ -9,11 +9,11 @@ interface Env {
 }
 
 export const initializeDB = (env: Env) => {
-  const url = env.TURSO_URL.trim();
+  const url = env.TURSO_URL;
   if (!url) {
     throw new Error("TURSO_URL is missing");
   }
-  const authToken = env.TURSO_AUTH_TOKEN.trim();
+  const authToken = env.TURSO_AUTH_TOKEN;
   if (!authToken) {
     throw new Error("TURSO_AUTH_TOKEN is missing");
   }
