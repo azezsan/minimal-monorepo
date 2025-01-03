@@ -7,6 +7,5 @@ interface Env {
   TURSO_URL: string;
   GOOGLE_CLIENT_ID: string;
   GOOGLE_CLIENT_SECRET: string;
-  DB: D1Database;
   API_WORKER: Fetcher;
 }

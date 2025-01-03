@@ -3,5 +3,4 @@
 interface CloudflareBindings {
   TURSO_AUTH_TOKEN: string;
   TURSO_URL: string;
-  DB: D1Database;
 }
