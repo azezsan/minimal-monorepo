@@ -18,11 +18,9 @@ export const oauthAccountsTable = sqliteTable(
       .unique()
       .references(() => usersTable.id),
   },
-  (table) => {
-    return {
-      pk: primaryKey({ columns: [table.providerId, table.providerUserId] }),
-    };
-  },
+  (table) => [
+    primaryKey({ columns: [table.providerId, table.providerUserId] }),
+  ],
 );
 
 export const oauthAccountsRelations = relations(

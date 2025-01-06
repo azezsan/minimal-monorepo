@@ -21,7 +21,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
     actions: [
       {
         type: "add",
-        path: "src/schema/{{ name }}/{{ name }}.ts",
+        path: "src/schema/{{ name }}/schema.ts",
         templateFile: "templates/schema.ts.hbs",
       },
       {
@@ -33,6 +33,16 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         type: "add",
         path: "src/schema/{{ name }}/index.ts",
         templateFile: "templates/index.ts.hbs",
+      },
+      {
+        type: "add",
+        path: "src/schema/index.ts",
+        skipIfExists: true,
+      },
+      {
+        type: "append",
+        path: "src/schema/index.ts",
+        template: `export * from "./{{ name }}";`,
       },
     ],
   });
