@@ -40,9 +40,12 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         skipIfExists: true,
       },
       {
-        type: "append",
-        path: "src/schema/index.ts",
-        template: `export * from "./{{ name }}";`,
+        type: "modify",
+        path: "src/schema/{{ scope }}/index.ts",
+        transform: (content: string, data: { name: string }) => {
+          const trimmed = content.trimEnd();
+          return `${trimmed}\nexport * from "./${data.name}";`;
+        },
       },
     ],
   });
