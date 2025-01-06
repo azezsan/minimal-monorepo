@@ -1,7 +1,7 @@
 import { relations, sql } from "drizzle-orm";
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
-import { oauthAccountsTable } from "../oauth_accounts";
+import { oauthAccountsTable } from "../oauthAccounts";
 
 export const usersTable = sqliteTable("users", {
   id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
