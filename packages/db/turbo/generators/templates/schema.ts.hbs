@@ -1,8 +1,8 @@
 import { sql } from 'drizzle-orm';
 import { integer, sqliteTable } from 'drizzle-orm/sqlite-core';
 
-export const {{name}}Table = sqliteTable("{{name}}", {
-  id: integer('id').primaryKey(),
+export const {{name}}Table = sqliteTable("{{snakeCase name}}", {
+  id: integer('id').primaryKey({ autoIncrement: true }),
   createdAt: integer('created_at', { mode: 'timestamp' })
     .notNull()
     .default(sql`(strftime('%s', 'now'))`),
