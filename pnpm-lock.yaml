@@ -184,10 +184,10 @@ importers:
         version: 0.14.0
       drizzle-orm:
         specifier: ^0.38.0
-        version: 0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)
+        version: 0.38.2(@cloudflare/workers-types@4.20241230.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)
       drizzle-typebox:
         specifier: ^0.2.0
-        version: 0.2.0(@sinclair/typebox@0.34.13)(drizzle-orm@0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42))
+        version: 0.2.0(@sinclair/typebox@0.34.13)(drizzle-orm@0.38.2(@cloudflare/workers-types@4.20241230.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42))
     devDependencies:
       '@acme/eslint-config':
         specifier: workspace:*
@@ -421,6 +421,9 @@ packages:
 
   '@cloudflare/workers-types@4.20241218.0':
     resolution: {integrity: sha512-Y0brjmJHcAZBXOPI7lU5hbiXglQWniA1kQjot2ata+HFimyjPPcz+4QWBRrmWcMPo0OadR2Vmac7WStDLpvz0w==}
+
+  '@cloudflare/workers-types@4.20241230.0':
+    resolution: {integrity: sha512-dtLD4jY35Lb750cCVyO1i/eIfdZJg2Z0i+B1RYX6BVeRPlgaHx/H18ImKAkYmy0g09Ow8R2jZy3hIxMgXun0WQ==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -4437,6 +4440,9 @@ snapshots:
 
   '@cloudflare/workers-types@4.20241218.0': {}
 
+  '@cloudflare/workers-types@4.20241230.0':
+    optional: true
+
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
@@ -6098,17 +6104,17 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42):
+  drizzle-orm@0.38.2(@cloudflare/workers-types@4.20241230.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42):
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20241218.0
+      '@cloudflare/workers-types': 4.20241230.0
       '@libsql/client': 0.14.0
       better-sqlite3: 11.7.0
       bun-types: 1.1.42
 
-  drizzle-typebox@0.2.0(@sinclair/typebox@0.34.13)(drizzle-orm@0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)):
+  drizzle-typebox@0.2.0(@sinclair/typebox@0.34.13)(drizzle-orm@0.38.2(@cloudflare/workers-types@4.20241230.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)):
     dependencies:
       '@sinclair/typebox': 0.34.13
-      drizzle-orm: 0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)
+      drizzle-orm: 0.38.2(@cloudflare/workers-types@4.20241230.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)
 
   dunder-proto@1.0.1:
     dependencies:
