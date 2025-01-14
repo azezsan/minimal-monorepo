@@ -16,7 +16,7 @@
     "@acme/tsconfig": "workspace:*",
     "@eslint/compat": "^1.2.4",
     "@types/eslint": "^9.6.1",
-    "@types/node": "^22.10.2",
+    "@types/node": "^22.10.6",
     "eslint": "^9.16.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-svelte": "^2.46.1",
