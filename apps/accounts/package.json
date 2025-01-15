@@ -24,7 +24,7 @@
     "@acme/ui": "workspace:*",
     "@cloudflare/workers-types": "catalog:",
     "@sveltejs/adapter-cloudflare": "^4.8.0",
-    "@sveltejs/kit": "^2.15.0",
+    "@sveltejs/kit": "^2.15.3",
     "@sveltejs/vite-plugin-svelte": "^5.0.1",
     "autoprefixer": "^10.4.20",
     "prettier": "^3.4.1",
