@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@libsql/client": "^0.14.0",
-    "drizzle-orm": "^0.38.0",
+    "drizzle-orm": "^0.38.3",
     "drizzle-typebox": "^0.2.0"
   },
   "devDependencies": {
