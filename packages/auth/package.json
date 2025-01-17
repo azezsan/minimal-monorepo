@@ -27,7 +27,7 @@
     "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "@cloudflare/workers-types": "catalog:",
-    "@sveltejs/kit": "^2.15.0",
+    "@sveltejs/kit": "^2.16.0",
     "typescript": "catalog:"
   },
   "prettier": "@acme/prettier-config"
