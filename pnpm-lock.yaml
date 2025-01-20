@@ -6,9 +6,6 @@ settings:
 
 catalogs:
   default:
-    '@cloudflare/workers-types':
-      specifier: ^4.20241216.0
-      version: 4.20241218.0
     prettier:
       specifier: ^3.4.1
       version: 3.4.2
@@ -77,10 +74,10 @@ importers:
         version: link:../../packages/ui
       '@cloudflare/workers-types':
         specifier: 'catalog:'
-        version: 4.20241218.0
+        version: 4.20250109.0
       '@sveltejs/adapter-cloudflare':
         specifier: ^4.8.0
-        version: 4.9.0(@sveltejs/kit@2.16.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(wrangler@3.99.0(@cloudflare/workers-types@4.20241218.0))
+        version: 4.9.0(@sveltejs/kit@2.16.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(wrangler@3.99.0(@cloudflare/workers-types@4.20250109.0))
       '@sveltejs/kit':
         specifier: ^2.16.0
         version: 2.16.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1))
@@ -113,7 +110,7 @@ importers:
         version: 6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)
       wrangler:
         specifier: 'catalog:'
-        version: 3.99.0(@cloudflare/workers-types@4.20241218.0)
+        version: 3.99.0(@cloudflare/workers-types@4.20250109.0)
 
   apps/api:
     dependencies:
@@ -138,13 +135,13 @@ importers:
         version: link:../../tooling/typescript
       '@cloudflare/workers-types':
         specifier: 'catalog:'
-        version: 4.20241218.0
+        version: 4.20250109.0
       typescript:
         specifier: 'catalog:'
         version: 5.7.2
       wrangler:
         specifier: 'catalog:'
-        version: 3.99.0(@cloudflare/workers-types@4.20241218.0)
+        version: 3.99.0(@cloudflare/workers-types@4.20250109.0)
 
   packages/auth:
     dependencies:
@@ -169,7 +166,7 @@ importers:
         version: link:../../tooling/typescript
       '@cloudflare/workers-types':
         specifier: 'catalog:'
-        version: 4.20241218.0
+        version: 4.20250109.0
       '@sveltejs/kit':
         specifier: ^2.16.0
         version: 2.16.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1))
@@ -184,10 +181,10 @@ importers:
         version: 0.14.0
       drizzle-orm:
         specifier: ^0.38.0
-        version: 0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)
+        version: 0.38.2(@cloudflare/workers-types@4.20250109.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)
       drizzle-typebox:
         specifier: ^0.2.1
-        version: 0.2.1(@sinclair/typebox@0.34.13)(drizzle-orm@0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42))
+        version: 0.2.1(@sinclair/typebox@0.34.13)(drizzle-orm@0.38.2(@cloudflare/workers-types@4.20250109.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42))
     devDependencies:
       '@acme/eslint-config':
         specifier: workspace:*
@@ -225,7 +222,7 @@ importers:
         version: link:../../tooling/typescript
       '@cloudflare/workers-types':
         specifier: 'catalog:'
-        version: 4.20241218.0
+        version: 4.20250109.0
       elysia:
         specifier: ^1.2.2
         version: 1.2.2(@sinclair/typebox@0.34.13)(openapi-types@12.1.3)(typescript@5.7.2)
@@ -419,8 +416,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@cloudflare/workers-types@4.20241218.0':
-    resolution: {integrity: sha512-Y0brjmJHcAZBXOPI7lU5hbiXglQWniA1kQjot2ata+HFimyjPPcz+4QWBRrmWcMPo0OadR2Vmac7WStDLpvz0w==}
+  '@cloudflare/workers-types@4.20250109.0':
+    resolution: {integrity: sha512-Y1zgSaEOOevl9ORpzgMcm4j535p3nK2lrblHHvYM2yxR50SBKGh+wvkRFAIxWRfjUGZEU+Fp6923EGioDBbobA==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -4429,7 +4426,7 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20241218.0':
     optional: true
 
-  '@cloudflare/workers-types@4.20241218.0': {}
+  '@cloudflare/workers-types@4.20250109.0': {}
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
@@ -5338,13 +5335,13 @@ snapshots:
 
   '@sinclair/typebox@0.34.13': {}
 
-  '@sveltejs/adapter-cloudflare@4.9.0(@sveltejs/kit@2.16.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(wrangler@3.99.0(@cloudflare/workers-types@4.20241218.0))':
+  '@sveltejs/adapter-cloudflare@4.9.0(@sveltejs/kit@2.16.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(wrangler@3.99.0(@cloudflare/workers-types@4.20250109.0))':
     dependencies:
-      '@cloudflare/workers-types': 4.20241218.0
+      '@cloudflare/workers-types': 4.20250109.0
       '@sveltejs/kit': 2.16.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1))
       esbuild: 0.24.2
       worktop: 0.8.0-next.18
-      wrangler: 3.99.0(@cloudflare/workers-types@4.20241218.0)
+      wrangler: 3.99.0(@cloudflare/workers-types@4.20250109.0)
 
   '@sveltejs/kit@2.16.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1))':
     dependencies:
@@ -6091,17 +6088,17 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42):
+  drizzle-orm@0.38.2(@cloudflare/workers-types@4.20250109.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42):
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20241218.0
+      '@cloudflare/workers-types': 4.20250109.0
       '@libsql/client': 0.14.0
       better-sqlite3: 11.7.0
       bun-types: 1.1.42
 
-  drizzle-typebox@0.2.1(@sinclair/typebox@0.34.13)(drizzle-orm@0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)):
+  drizzle-typebox@0.2.1(@sinclair/typebox@0.34.13)(drizzle-orm@0.38.2(@cloudflare/workers-types@4.20250109.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)):
     dependencies:
       '@sinclair/typebox': 0.34.13
-      drizzle-orm: 0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)
+      drizzle-orm: 0.38.2(@cloudflare/workers-types@4.20250109.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)
 
   dunder-proto@1.0.1:
     dependencies:
@@ -8373,7 +8370,7 @@ snapshots:
       mrmime: 2.0.0
       regexparam: 3.0.0
 
-  wrangler@3.99.0(@cloudflare/workers-types@4.20241218.0):
+  wrangler@3.99.0(@cloudflare/workers-types@4.20250109.0):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@esbuild-plugins/node-globals-polyfill': 0.2.3(esbuild@0.17.19)
@@ -8393,7 +8390,7 @@ snapshots:
       workerd: 1.20241218.0
       xxhash-wasm: 1.1.0
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20241218.0
+      '@cloudflare/workers-types': 4.20250109.0
       fsevents: 2.3.3
     transitivePeerDependencies:
       - bufferutil
