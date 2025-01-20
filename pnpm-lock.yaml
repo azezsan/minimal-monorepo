@@ -186,8 +186,8 @@ importers:
         specifier: ^0.38.0
         version: 0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)
       drizzle-typebox:
-        specifier: ^0.2.0
-        version: 0.2.0(@sinclair/typebox@0.34.13)(drizzle-orm@0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42))
+        specifier: ^0.2.1
+        version: 0.2.1(@sinclair/typebox@0.34.13)(drizzle-orm@0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42))
     devDependencies:
       '@acme/eslint-config':
         specifier: workspace:*
@@ -2280,8 +2280,8 @@ packages:
       sqlite3:
         optional: true
 
-  drizzle-typebox@0.2.0:
-    resolution: {integrity: sha512-MvFeZubRlPdocd84/fA9meCkEvrHLCv1+4CNql9C4NeY9n1ITaDngs61kcvkRaFlt26bFMzv1XHZij8yd3J31w==}
+  drizzle-typebox@0.2.1:
+    resolution: {integrity: sha512-DQgApZC+qliE6PFQj496BNv+k3B3Y25Z27ZDYA/drHvF9ta4M3bqrhv2WuGePbq662KTVIsb/UL5GT57hJhYdA==}
     peerDependencies:
       '@sinclair/typebox': '>=0.34.8'
       drizzle-orm: '>=0.36.0'
@@ -3246,8 +3246,8 @@ packages:
   no-case@2.3.2:
     resolution: {integrity: sha512-rmTZ9kz+f3rCvK2TD1Ue/oZlns7OGoIWP4fc3llxxRXlOkHKoWPPWJOfFYpITabSow43QJbRIoHQXtt10VldyQ==}
 
-  node-abi@3.71.0:
-    resolution: {integrity: sha512-SZ40vRiy/+wRTf21hxkkEjPJZpARzUMVcJoQse2EF8qkUWbbO2z7vd5oA/H6bVH6SZQ5STGcu0KRDS7biNRfxw==}
+  node-abi@3.73.0:
+    resolution: {integrity: sha512-z8iYzQGBu35ZkTQ9mtR8RqugJZ9RCLn8fv3d7LsgDBzOijGQP3RdKTX4LA7LXw03ZhU5z0l4xfhIMgSES31+cg==}
     engines: {node: '>=10'}
 
   node-domexception@1.0.0:
@@ -3968,8 +3968,8 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
-  tar-fs@2.1.1:
-    resolution: {integrity: sha512-V0r2Y9scmbDRLCNex/+hYzvp/zyYjvFbHPNgVTKfQvVrb6guiE/fxP+XblDNR011utopbkex2nM4dHNV6GDsng==}
+  tar-fs@2.1.2:
+    resolution: {integrity: sha512-EsaAXwxmx8UB7FRKqeozqEPop69DXcmYwTQwXvyAPF352HJsPdkVhvTaDPYqfNgruveJIJy3TA2l+2zj8LJIJA==}
 
   tar-stream@2.2.0:
     resolution: {integrity: sha512-ujeqbceABgwMZxEJnk2HDY2DlnUZ+9oEcb1KzTVfYHio0UE6dG71n60d8D2I4qNvleWrrXpmjpt7vZeF1LnMZQ==}
@@ -6098,7 +6098,7 @@ snapshots:
       better-sqlite3: 11.7.0
       bun-types: 1.1.42
 
-  drizzle-typebox@0.2.0(@sinclair/typebox@0.34.13)(drizzle-orm@0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)):
+  drizzle-typebox@0.2.1(@sinclair/typebox@0.34.13)(drizzle-orm@0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)):
     dependencies:
       '@sinclair/typebox': 0.34.13
       drizzle-orm: 0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)
@@ -7248,7 +7248,7 @@ snapshots:
     dependencies:
       lower-case: 1.1.4
 
-  node-abi@3.71.0:
+  node-abi@3.73.0:
     dependencies:
       semver: 7.6.3
     optional: true
@@ -7536,11 +7536,11 @@ snapshots:
       minimist: 1.2.8
       mkdirp-classic: 0.5.3
       napi-build-utils: 1.0.2
-      node-abi: 3.71.0
+      node-abi: 3.73.0
       pump: 3.0.2
       rc: 1.2.8
       simple-get: 4.0.1
-      tar-fs: 2.1.1
+      tar-fs: 2.1.2
       tunnel-agent: 0.6.0
     optional: true
 
@@ -8050,7 +8050,7 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  tar-fs@2.1.1:
+  tar-fs@2.1.2:
     dependencies:
       chownr: 1.1.4
       mkdirp-classic: 0.5.3
