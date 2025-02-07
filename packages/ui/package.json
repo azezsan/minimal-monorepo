@@ -21,7 +21,7 @@
     "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "@sveltejs/kit": "^2.16.0",
-    "bits-ui": "^1.0.0-next.64",
+    "bits-ui": "^1.0.0-next.87",
     "clsx": "^2.1.1",
     "svelte": "^5.12.0",
     "svelte-check": "^4.1.0",
