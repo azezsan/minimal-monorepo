@@ -7,8 +7,8 @@ settings:
 catalogs:
   default:
     '@cloudflare/workers-types':
-      specifier: ^4.20241216.0
-      version: 4.20241218.0
+      specifier: ^4.20250404.0
+      version: 4.20250404.0
     prettier:
       specifier: ^3.4.1
       version: 3.4.2
@@ -77,10 +77,10 @@ importers:
         version: link:../../packages/ui
       '@cloudflare/workers-types':
         specifier: 'catalog:'
-        version: 4.20241218.0
+        version: 4.20250404.0
       '@sveltejs/adapter-cloudflare':
         specifier: ^4.8.0
-        version: 4.9.0(@sveltejs/kit@2.16.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(wrangler@3.99.0(@cloudflare/workers-types@4.20241218.0))
+        version: 4.9.0(@sveltejs/kit@2.16.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(wrangler@3.99.0(@cloudflare/workers-types@4.20250404.0))
       '@sveltejs/kit':
         specifier: ^2.16.0
         version: 2.16.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1))
@@ -113,7 +113,7 @@ importers:
         version: 6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)
       wrangler:
         specifier: 'catalog:'
-        version: 3.99.0(@cloudflare/workers-types@4.20241218.0)
+        version: 3.99.0(@cloudflare/workers-types@4.20250404.0)
 
   apps/api:
     dependencies:
@@ -138,13 +138,13 @@ importers:
         version: link:../../tooling/typescript
       '@cloudflare/workers-types':
         specifier: 'catalog:'
-        version: 4.20241218.0
+        version: 4.20250404.0
       typescript:
         specifier: 'catalog:'
         version: 5.7.2
       wrangler:
         specifier: 'catalog:'
-        version: 3.99.0(@cloudflare/workers-types@4.20241218.0)
+        version: 3.99.0(@cloudflare/workers-types@4.20250404.0)
 
   packages/auth:
     dependencies:
@@ -169,7 +169,7 @@ importers:
         version: link:../../tooling/typescript
       '@cloudflare/workers-types':
         specifier: 'catalog:'
-        version: 4.20241218.0
+        version: 4.20250404.0
       '@sveltejs/kit':
         specifier: ^2.16.0
         version: 2.16.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1))
@@ -184,10 +184,10 @@ importers:
         version: 0.14.0
       drizzle-orm:
         specifier: ^0.38.0
-        version: 0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)
+        version: 0.38.2(@cloudflare/workers-types@4.20250404.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)
       drizzle-typebox:
         specifier: ^0.2.1
-        version: 0.2.1(@sinclair/typebox@0.34.13)(drizzle-orm@0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42))
+        version: 0.2.1(@sinclair/typebox@0.34.13)(drizzle-orm@0.38.2(@cloudflare/workers-types@4.20250404.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42))
     devDependencies:
       '@acme/eslint-config':
         specifier: workspace:*
@@ -225,7 +225,7 @@ importers:
         version: link:../../tooling/typescript
       '@cloudflare/workers-types':
         specifier: 'catalog:'
-        version: 4.20241218.0
+        version: 4.20250404.0
       elysia:
         specifier: ^1.2.2
         version: 1.2.2(@sinclair/typebox@0.34.13)(openapi-types@12.1.3)(typescript@5.7.2)
@@ -419,8 +419,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@cloudflare/workers-types@4.20241218.0':
-    resolution: {integrity: sha512-Y0brjmJHcAZBXOPI7lU5hbiXglQWniA1kQjot2ata+HFimyjPPcz+4QWBRrmWcMPo0OadR2Vmac7WStDLpvz0w==}
+  '@cloudflare/workers-types@4.20250404.0':
+    resolution: {integrity: sha512-XB8LNS9spWcxU56Tt/RPl0S06oyXfZCSDVKBbzjHYZtgN5kZP4UtTR01t16HUfo330EtJOo8cdo/PbiBAwRNIg==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -1096,27 +1096,33 @@ packages:
 
   '@inlang/detect-json-formatting@1.0.0':
     resolution: {integrity: sha512-o0jeI8U4TgNlsPwI0y92jld8/18Loh2KEgHCYCJ42rCOdxFrA8R60cydlEd2/6jkdHFn5DxKj8rOyiKv3z9uOw==}
+    deprecated: no longer used
 
   '@inlang/json-types@1.1.0':
     resolution: {integrity: sha512-n6vS6AqETsCFbV4TdBvR/EH57waVXzKsMqeUQ+eH2Q6NUATfKhfLabgNms2A+QV3aedH/hLtb1pRmjl2ykBVZg==}
+    deprecated: no longer used
     peerDependencies:
       '@sinclair/typebox': ^0.31.0
 
   '@inlang/language-tag@1.5.1':
     resolution: {integrity: sha512-+NlYDxDvN5h/TKUmkuQv+Ct1flxaVRousCbek7oFEk3/afZPVLNTJhm+cX2xiOg3tmi2KKrBLfy/V9oUDHj6GQ==}
+    deprecated: use the inlang sdk directly https://www.npmjs.com/package/@inlang/sdk
 
   '@inlang/message-lint-rule@1.4.7':
     resolution: {integrity: sha512-FCiFe/H25fqhsIb/YTb0K7eDJqEYzdr6ectF0xG4zARiS7nXz0FHxk2niJrIO8kFkB4mx6tszsgQ0xqD5cHQag==}
+    deprecated: use the inlang sdk directly https://www.npmjs.com/package/@inlang/sdk
     peerDependencies:
       '@sinclair/typebox': ^0.31.17
 
   '@inlang/message@2.1.0':
     resolution: {integrity: sha512-Gr3wiErI7fW4iW11xgZzsJEUTjlZuz02fB/EO+ENTBlSHGyI1kzbCCeNqLr1mnGdQYiOxfuZxY0S4G5C6Pju3Q==}
+    deprecated: use the inlang sdk directly https://www.npmjs.com/package/@inlang/sdk
     peerDependencies:
       '@sinclair/typebox': ^0.31.17
 
   '@inlang/module@1.2.14':
     resolution: {integrity: sha512-Z7rRa6x3RkzjdvNA7x+KskNGdSBEO46X9c7bTl6eZmLXy0J9yGDn6s4jpYqQzyKRG8g5mEqWcRqcVqdNwzj5Gg==}
+    deprecated: use the inlang sdk directly https://www.npmjs.com/package/@inlang/sdk
     peerDependencies:
       '@sinclair/typebox': ^0.31.17
 
@@ -1126,18 +1132,22 @@ packages:
 
   '@inlang/paraglide-sveltekit@0.12.1':
     resolution: {integrity: sha512-UaNgdaa2NWRwwcqo1HZA+mmu5EZFTZ5i65dJJUC6jyqze/L7ozbIG73UHjXf57WONtLjbsEA7WlxcwMVWzpMvw==}
+    deprecated: use the paraglide-js package directly with v2 or above https://www.npmjs.com/package/@inlang/paraglide-js. the sveltekit adapter is not needed anymore
     hasBin: true
     peerDependencies:
       '@sveltejs/kit': ^2.4.3
 
   '@inlang/paraglide-unplugin@1.8.8':
     resolution: {integrity: sha512-2mQzzRwJY36Z9wsnielmec0uMhUOgTje/xMy9pG7h+voO2rrX89MQbEKBHkRzkb0yq090oILDFq3rUXRCgW07g==}
+    deprecated: use the paraglide-js package directly which exports all bundler plugins in v2 and above https://www.npmjs.com/package/@inlang/paraglide-js
 
   '@inlang/paraglide-vite@1.2.77':
     resolution: {integrity: sha512-rn2hUcgYnQOhHc4qNerMc7AUqBN4WTINhm8MwP5L0f/EIJLsQ7jDLMrZRiBOkFuMBj7p53oHElhwk+juBqkCAw==}
+    deprecated: the vite plugin is now bundled in the paraglide-js package. please use https://www.npmjs.com/package/@inlang/paraglide-js directly
 
   '@inlang/plugin@2.4.14':
     resolution: {integrity: sha512-HFI1t1tKs6jXqwKVl59vvt7kvMgg2Po7xA3IFijfJTZCt0tTI8txqeXCUV9jhUop29Hqj6a5zQd32BYv33Dulw==}
+    deprecated: use the inlang sdk directly https://www.npmjs.com/package/@inlang/sdk
     peerDependencies:
       '@sinclair/typebox': ^0.31.17
 
@@ -1148,6 +1158,7 @@ packages:
 
   '@inlang/result@1.1.0':
     resolution: {integrity: sha512-zLGroi9EUiHuOjUOaglUVTFO7EWdo2OARMJLBO1Q5Ga/xJmSQb6XS1lhqEXBFAjgFarfEMX5YEJWWALogYV3wA==}
+    deprecated: result is no longer used
 
   '@inlang/sdk@0.36.3':
     resolution: {integrity: sha512-wjsavc44H24v74tdEQ13FqZZcr43T106oEfHJnBLzEP55Zz2JJWABLund+DEdosZx+9E8mJBEW5JlVnlBwP3Zw==}
@@ -1155,6 +1166,7 @@ packages:
 
   '@inlang/translatable@1.3.1':
     resolution: {integrity: sha512-VAtle21vRpIrB+axtHFrFB0d1HtDaaNj+lV77eZQTJyOWbTFYTVIQJ8WAbyw9eu4F6h6QC2FutLyxjMomxfpcQ==}
+    deprecated: no longer used
 
   '@internationalized/date@3.6.0':
     resolution: {integrity: sha512-+z6ti+CcJnRlLHok/emGEsWQhe7kfSmEW+/6qCzvKY67YPh7YOBfvc7+/+NXq+zJlbArg30tYpqLjNgcAYv2YQ==}
@@ -1237,9 +1249,11 @@ packages:
 
   '@lix-js/client@2.2.1':
     resolution: {integrity: sha512-6DTJdRN2L2a1A8OxW1Wqh3ZOORqq8+YlCALMF5UMoxhfHE4Fcq9FZztMkAV+KwhrDSsp0USWvD9myG0XX+v6QQ==}
+    deprecated: use the lix sdk instead https://www.npmjs.com/package/@lix-js/sdk
 
   '@lix-js/fs@2.2.0':
     resolution: {integrity: sha512-B9X3FjD8WmdG7tbA44JuniSO0KdKBWnjfxl8zpgrDCkavrp/GP7U0xxBkc0WgeeoHjQ/pkqq9VqtWB2kS9jIUg==}
+    deprecated: use the lix sdk instead https://www.npmjs.com/package/@lix-js/sdk
 
   '@neon-rs/load@0.0.4':
     resolution: {integrity: sha512-kTPhdZyTQxB+2wpiRcFWrDcejc4JI6tkPuS7UZCG4l6Zvc5kU/gGQ/ozvHTh1XR5tS+UlfAfGuPajjzQjCiHCw==}
@@ -3076,6 +3090,7 @@ packages:
 
   lodash.get@4.4.2:
     resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
+    deprecated: This package is deprecated. Use the optional chaining (?.) operator instead.
 
   lodash.includes@4.3.0:
     resolution: {integrity: sha512-W3Bx6mdkRTGtlJISOvVD/lbqjTlPPUDTMnlXZFnVwi9NKJ6tiAk6LVdlhZMm17VZisqhKcgzpO5Wz91PCt5b0w==}
@@ -4433,7 +4448,7 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20241218.0':
     optional: true
 
-  '@cloudflare/workers-types@4.20241218.0': {}
+  '@cloudflare/workers-types@4.20250404.0': {}
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
@@ -5342,13 +5357,13 @@ snapshots:
 
   '@sinclair/typebox@0.34.13': {}
 
-  '@sveltejs/adapter-cloudflare@4.9.0(@sveltejs/kit@2.16.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(wrangler@3.99.0(@cloudflare/workers-types@4.20241218.0))':
+  '@sveltejs/adapter-cloudflare@4.9.0(@sveltejs/kit@2.16.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(wrangler@3.99.0(@cloudflare/workers-types@4.20250404.0))':
     dependencies:
-      '@cloudflare/workers-types': 4.20241218.0
+      '@cloudflare/workers-types': 4.20250404.0
       '@sveltejs/kit': 2.16.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1))
       esbuild: 0.24.2
       worktop: 0.8.0-next.18
-      wrangler: 3.99.0(@cloudflare/workers-types@4.20241218.0)
+      wrangler: 3.99.0(@cloudflare/workers-types@4.20250404.0)
 
   '@sveltejs/kit@2.16.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.15.0)(vite@6.0.7(@types/node@22.10.6)(jiti@1.21.7)(yaml@2.6.1))':
     dependencies:
@@ -6095,17 +6110,17 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42):
+  drizzle-orm@0.38.2(@cloudflare/workers-types@4.20250404.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42):
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20241218.0
+      '@cloudflare/workers-types': 4.20250404.0
       '@libsql/client': 0.14.0
       better-sqlite3: 11.7.0
       bun-types: 1.1.42
 
-  drizzle-typebox@0.2.1(@sinclair/typebox@0.34.13)(drizzle-orm@0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)):
+  drizzle-typebox@0.2.1(@sinclair/typebox@0.34.13)(drizzle-orm@0.38.2(@cloudflare/workers-types@4.20250404.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)):
     dependencies:
       '@sinclair/typebox': 0.34.13
-      drizzle-orm: 0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)
+      drizzle-orm: 0.38.2(@cloudflare/workers-types@4.20250404.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)
 
   dunder-proto@1.0.1:
     dependencies:
@@ -8385,7 +8400,7 @@ snapshots:
       mrmime: 2.0.0
       regexparam: 3.0.0
 
-  wrangler@3.99.0(@cloudflare/workers-types@4.20241218.0):
+  wrangler@3.99.0(@cloudflare/workers-types@4.20250404.0):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@esbuild-plugins/node-globals-polyfill': 0.2.3(esbuild@0.17.19)
@@ -8405,7 +8420,7 @@ snapshots:
       workerd: 1.20241218.0
       xxhash-wasm: 1.1.0
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20241218.0
+      '@cloudflare/workers-types': 4.20250404.0
       fsevents: 2.3.3
     transitivePeerDependencies:
       - bufferutil
