@@ -183,11 +183,11 @@ importers:
         specifier: ^0.14.0
         version: 0.14.0
       drizzle-orm:
-        specifier: ^0.38.0
-        version: 0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)
+        specifier: ^0.42.0
+        version: 0.42.0(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)
       drizzle-typebox:
         specifier: ^0.2.1
-        version: 0.2.1(@sinclair/typebox@0.34.13)(drizzle-orm@0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42))
+        version: 0.2.1(@sinclair/typebox@0.34.13)(drizzle-orm@0.42.0(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42))
     devDependencies:
       '@acme/eslint-config':
         specifier: workspace:*
@@ -1096,27 +1096,33 @@ packages:
 
   '@inlang/detect-json-formatting@1.0.0':
     resolution: {integrity: sha512-o0jeI8U4TgNlsPwI0y92jld8/18Loh2KEgHCYCJ42rCOdxFrA8R60cydlEd2/6jkdHFn5DxKj8rOyiKv3z9uOw==}
+    deprecated: no longer used
 
   '@inlang/json-types@1.1.0':
     resolution: {integrity: sha512-n6vS6AqETsCFbV4TdBvR/EH57waVXzKsMqeUQ+eH2Q6NUATfKhfLabgNms2A+QV3aedH/hLtb1pRmjl2ykBVZg==}
+    deprecated: no longer used
     peerDependencies:
       '@sinclair/typebox': ^0.31.0
 
   '@inlang/language-tag@1.5.1':
     resolution: {integrity: sha512-+NlYDxDvN5h/TKUmkuQv+Ct1flxaVRousCbek7oFEk3/afZPVLNTJhm+cX2xiOg3tmi2KKrBLfy/V9oUDHj6GQ==}
+    deprecated: use the inlang sdk directly https://www.npmjs.com/package/@inlang/sdk
 
   '@inlang/message-lint-rule@1.4.7':
     resolution: {integrity: sha512-FCiFe/H25fqhsIb/YTb0K7eDJqEYzdr6ectF0xG4zARiS7nXz0FHxk2niJrIO8kFkB4mx6tszsgQ0xqD5cHQag==}
+    deprecated: use the inlang sdk directly https://www.npmjs.com/package/@inlang/sdk
     peerDependencies:
       '@sinclair/typebox': ^0.31.17
 
   '@inlang/message@2.1.0':
     resolution: {integrity: sha512-Gr3wiErI7fW4iW11xgZzsJEUTjlZuz02fB/EO+ENTBlSHGyI1kzbCCeNqLr1mnGdQYiOxfuZxY0S4G5C6Pju3Q==}
+    deprecated: use the inlang sdk directly https://www.npmjs.com/package/@inlang/sdk
     peerDependencies:
       '@sinclair/typebox': ^0.31.17
 
   '@inlang/module@1.2.14':
     resolution: {integrity: sha512-Z7rRa6x3RkzjdvNA7x+KskNGdSBEO46X9c7bTl6eZmLXy0J9yGDn6s4jpYqQzyKRG8g5mEqWcRqcVqdNwzj5Gg==}
+    deprecated: use the inlang sdk directly https://www.npmjs.com/package/@inlang/sdk
     peerDependencies:
       '@sinclair/typebox': ^0.31.17
 
@@ -1126,18 +1132,22 @@ packages:
 
   '@inlang/paraglide-sveltekit@0.12.1':
     resolution: {integrity: sha512-UaNgdaa2NWRwwcqo1HZA+mmu5EZFTZ5i65dJJUC6jyqze/L7ozbIG73UHjXf57WONtLjbsEA7WlxcwMVWzpMvw==}
+    deprecated: use the paraglide-js package directly with v2 or above https://www.npmjs.com/package/@inlang/paraglide-js. the sveltekit adapter is not needed anymore
     hasBin: true
     peerDependencies:
       '@sveltejs/kit': ^2.4.3
 
   '@inlang/paraglide-unplugin@1.8.8':
     resolution: {integrity: sha512-2mQzzRwJY36Z9wsnielmec0uMhUOgTje/xMy9pG7h+voO2rrX89MQbEKBHkRzkb0yq090oILDFq3rUXRCgW07g==}
+    deprecated: use the paraglide-js package directly which exports all bundler plugins in v2 and above https://www.npmjs.com/package/@inlang/paraglide-js
 
   '@inlang/paraglide-vite@1.2.77':
     resolution: {integrity: sha512-rn2hUcgYnQOhHc4qNerMc7AUqBN4WTINhm8MwP5L0f/EIJLsQ7jDLMrZRiBOkFuMBj7p53oHElhwk+juBqkCAw==}
+    deprecated: the vite plugin is now bundled in the paraglide-js package. please use https://www.npmjs.com/package/@inlang/paraglide-js directly
 
   '@inlang/plugin@2.4.14':
     resolution: {integrity: sha512-HFI1t1tKs6jXqwKVl59vvt7kvMgg2Po7xA3IFijfJTZCt0tTI8txqeXCUV9jhUop29Hqj6a5zQd32BYv33Dulw==}
+    deprecated: use the inlang sdk directly https://www.npmjs.com/package/@inlang/sdk
     peerDependencies:
       '@sinclair/typebox': ^0.31.17
 
@@ -1148,6 +1158,7 @@ packages:
 
   '@inlang/result@1.1.0':
     resolution: {integrity: sha512-zLGroi9EUiHuOjUOaglUVTFO7EWdo2OARMJLBO1Q5Ga/xJmSQb6XS1lhqEXBFAjgFarfEMX5YEJWWALogYV3wA==}
+    deprecated: result is no longer used
 
   '@inlang/sdk@0.36.3':
     resolution: {integrity: sha512-wjsavc44H24v74tdEQ13FqZZcr43T106oEfHJnBLzEP55Zz2JJWABLund+DEdosZx+9E8mJBEW5JlVnlBwP3Zw==}
@@ -1155,6 +1166,7 @@ packages:
 
   '@inlang/translatable@1.3.1':
     resolution: {integrity: sha512-VAtle21vRpIrB+axtHFrFB0d1HtDaaNj+lV77eZQTJyOWbTFYTVIQJ8WAbyw9eu4F6h6QC2FutLyxjMomxfpcQ==}
+    deprecated: no longer used
 
   '@internationalized/date@3.6.0':
     resolution: {integrity: sha512-+z6ti+CcJnRlLHok/emGEsWQhe7kfSmEW+/6qCzvKY67YPh7YOBfvc7+/+NXq+zJlbArg30tYpqLjNgcAYv2YQ==}
@@ -1237,9 +1249,11 @@ packages:
 
   '@lix-js/client@2.2.1':
     resolution: {integrity: sha512-6DTJdRN2L2a1A8OxW1Wqh3ZOORqq8+YlCALMF5UMoxhfHE4Fcq9FZztMkAV+KwhrDSsp0USWvD9myG0XX+v6QQ==}
+    deprecated: use the lix sdk instead https://www.npmjs.com/package/@lix-js/sdk
 
   '@lix-js/fs@2.2.0':
     resolution: {integrity: sha512-B9X3FjD8WmdG7tbA44JuniSO0KdKBWnjfxl8zpgrDCkavrp/GP7U0xxBkc0WgeeoHjQ/pkqq9VqtWB2kS9jIUg==}
+    deprecated: use the lix sdk instead https://www.npmjs.com/package/@lix-js/sdk
 
   '@neon-rs/load@0.0.4':
     resolution: {integrity: sha512-kTPhdZyTQxB+2wpiRcFWrDcejc4JI6tkPuS7UZCG4l6Zvc5kU/gGQ/ozvHTh1XR5tS+UlfAfGuPajjzQjCiHCw==}
@@ -2188,8 +2202,8 @@ packages:
     resolution: {integrity: sha512-HmA/NeewvHywhJ2ENXD3KvOuM/+K2dGLJfxVfIHsGwaqKICJnS+Ke2L6UcSrSrtMJLJaT0Im1Qv4TFXfaZShyw==}
     hasBin: true
 
-  drizzle-orm@0.38.2:
-    resolution: {integrity: sha512-eCE3yPRAskLo1WpM9OHpFaM70tBEDsWhwR/0M3CKyztAXKR9Qs3asZlcJOEliIcUSg8GuwrlY0dmYDgmm6y5GQ==}
+  drizzle-orm@0.42.0:
+    resolution: {integrity: sha512-pS8nNJm2kBNZwrOjTHJfdKkaU+KuUQmV/vk5D57NojDq4FG+0uAYGMulXtYT///HfgsMF0hnFFvu1ezI3OwOkg==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=4'
@@ -2199,25 +2213,24 @@ packages:
       '@neondatabase/serverless': '>=0.10.0'
       '@op-engineering/op-sqlite': '>=2'
       '@opentelemetry/api': ^1.4.1
-      '@planetscale/database': '>=1'
+      '@planetscale/database': '>=1.13'
       '@prisma/client': '*'
       '@tidbcloud/serverless': '*'
       '@types/better-sqlite3': '*'
       '@types/pg': '*'
-      '@types/react': '>=18'
       '@types/sql.js': '*'
       '@vercel/postgres': '>=0.8.0'
       '@xata.io/client': '*'
       better-sqlite3: '>=7'
       bun-types: '*'
       expo-sqlite: '>=14.0.0'
+      gel: '>=2'
       knex: '*'
       kysely: '*'
       mysql2: '>=2'
       pg: '>=8'
       postgres: '>=3'
       prisma: '*'
-      react: '>=18'
       sql.js: '>=1'
       sqlite3: '>=5'
     peerDependenciesMeta:
@@ -2247,8 +2260,6 @@ packages:
         optional: true
       '@types/pg':
         optional: true
-      '@types/react':
-        optional: true
       '@types/sql.js':
         optional: true
       '@vercel/postgres':
@@ -2261,6 +2272,8 @@ packages:
         optional: true
       expo-sqlite:
         optional: true
+      gel:
+        optional: true
       knex:
         optional: true
       kysely:
@@ -2272,8 +2285,6 @@ packages:
       postgres:
         optional: true
       prisma:
-        optional: true
-      react:
         optional: true
       sql.js:
         optional: true
@@ -3076,6 +3087,7 @@ packages:
 
   lodash.get@4.4.2:
     resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
+    deprecated: This package is deprecated. Use the optional chaining (?.) operator instead.
 
   lodash.includes@4.3.0:
     resolution: {integrity: sha512-W3Bx6mdkRTGtlJISOvVD/lbqjTlPPUDTMnlXZFnVwi9NKJ6tiAk6LVdlhZMm17VZisqhKcgzpO5Wz91PCt5b0w==}
@@ -3234,8 +3246,8 @@ packages:
     engines: {node: ^18 || >=20}
     hasBin: true
 
-  napi-build-utils@1.0.2:
-    resolution: {integrity: sha512-ONmRUqK7zj7DWX0D9ADe03wbwOBZxNAfF20PlGfCWQcD3+/MakShIHrMqx9YwPTfxDdF1zLeL+RGZiR9kGMLdg==}
+  napi-build-utils@2.0.0:
+    resolution: {integrity: sha512-GEbrYkbfF7MoNaoh2iGG84Mnf/WZfB0GdGEsM8wz7Expx/LlWf5U8t9nvJKXSp3qr5IsEbK04cBGhol/KwOsWA==}
 
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
@@ -3250,8 +3262,8 @@ packages:
   no-case@2.3.2:
     resolution: {integrity: sha512-rmTZ9kz+f3rCvK2TD1Ue/oZlns7OGoIWP4fc3llxxRXlOkHKoWPPWJOfFYpITabSow43QJbRIoHQXtt10VldyQ==}
 
-  node-abi@3.73.0:
-    resolution: {integrity: sha512-z8iYzQGBu35ZkTQ9mtR8RqugJZ9RCLn8fv3d7LsgDBzOijGQP3RdKTX4LA7LXw03ZhU5z0l4xfhIMgSES31+cg==}
+  node-abi@3.74.0:
+    resolution: {integrity: sha512-c5XK0MjkGBrQPGYG24GBADZud0NCbznxNx0ZkS+ebUTrmV1qTDxPxSL8zEAPURXSbLRWVexxmP4986BziahL5w==}
     engines: {node: '>=10'}
 
   node-domexception@1.0.0:
@@ -3321,8 +3333,8 @@ packages:
     resolution: {integrity: sha512-MG5qmrTL5y8KYwFgE1A4JWmgfQBaIETE/lOlfwNYx1QOtCQHGVxkRJmdUJltFc1HVn73d61TlMhMyNTOtMl+ng==}
     engines: {node: '>= 18'}
 
-  ohash@1.1.4:
-    resolution: {integrity: sha512-FlDryZAahJmEF3VR3w1KogSEdWX3WhA5GPakFx4J81kEAiHyLMpdLLElS8n8dfNadMgAne/MywcvmogzscVt4g==}
+  ohash@1.1.6:
+    resolution: {integrity: sha512-TBu7PtV8YkAZn0tSxobKY2n2aAQva936lhRrj6957aDaCf9IEtqsKbgMzXE/F/sjqYOwmrukeORHNLe5glk7Cg==}
 
   once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
@@ -3513,8 +3525,8 @@ packages:
     resolution: {integrity: sha512-vy8Mt9IEfniUgqQ1rOCQ31CBO1VNqDGd3ZtHlWR9/YfU6RiuK+9pUXPb4h6HTGzQmjL8NFnjd8K8NMXSX8S6MQ==}
     engines: {node: '>=15.0.0'}
 
-  prebuild-install@7.1.2:
-    resolution: {integrity: sha512-UnNke3IQb6sgarcZIDU3gbMeTp/9SSU1DAIkil7PrqG1vZlBtY5msYccSKSHDqa3hNg436IXK+SNImReuA1wEQ==}
+  prebuild-install@7.1.3:
+    resolution: {integrity: sha512-8Mf2cbV7x1cXPUILADGI3wuhfqWvtiLA1iclTDbFRZkgRQS0NqsPZphna9V+HyTEadheuPmjaJMsbzKQFOzLug==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -3747,6 +3759,11 @@ packages:
 
   semver@7.6.3:
     resolution: {integrity: sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==}
+    engines: {node: '>=10'}
+    hasBin: true
+
+  semver@7.7.1:
+    resolution: {integrity: sha512-hlq8tAfn0m/61p4BVRcPzIGr6LKiMwo4VM6dGi6pt4qcRkmNzTcWq6eCEjEh+qXjkMDvPlOFFSGwQjoEa6gyMA==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -4124,8 +4141,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  ufo@1.5.4:
-    resolution: {integrity: sha512-UsUk3byDzKd04EyoZ7U4DOlxQaD14JUKQl6/P7wiX4FNvUfm3XL246n9W5AmqwW5RSFJ27NAuM0iLscAOYUiGQ==}
+  ufo@1.6.1:
+    resolution: {integrity: sha512-9a4/uxlTWJ4+a5i0ooc1rU7C7YOw3wT+UGqdeNNHWnOF9qcMBgLRS+4IYUqbczewFx4mLEig6gawh7X6mFlEkA==}
 
   uglify-js@3.19.3:
     resolution: {integrity: sha512-v3Xu+yuwBXisp6QYTcH4UbH+xYJXqnq2m/LtQVWKWzYc1iehYnLixoQDN9FH6/j9/oybfd6W9Ghwkl8+UMKTKQ==}
@@ -5739,7 +5756,7 @@ snapshots:
   better-sqlite3@11.7.0:
     dependencies:
       bindings: 1.5.0
-      prebuild-install: 7.1.2
+      prebuild-install: 7.1.3
     optional: true
 
   binary-extensions@2.3.0: {}
@@ -6095,17 +6112,17 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42):
+  drizzle-orm@0.42.0(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42):
     optionalDependencies:
       '@cloudflare/workers-types': 4.20241218.0
       '@libsql/client': 0.14.0
       better-sqlite3: 11.7.0
       bun-types: 1.1.42
 
-  drizzle-typebox@0.2.1(@sinclair/typebox@0.34.13)(drizzle-orm@0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)):
+  drizzle-typebox@0.2.1(@sinclair/typebox@0.34.13)(drizzle-orm@0.42.0(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)):
     dependencies:
       '@sinclair/typebox': 0.34.13
-      drizzle-orm: 0.38.2(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)
+      drizzle-orm: 0.42.0(@cloudflare/workers-types@4.20241218.0)(@libsql/client@0.14.0)(better-sqlite3@11.7.0)(bun-types@1.1.42)
 
   dunder-proto@1.0.1:
     dependencies:
@@ -7247,7 +7264,7 @@ snapshots:
 
   nanoid@5.0.9: {}
 
-  napi-build-utils@1.0.2:
+  napi-build-utils@2.0.0:
     optional: true
 
   natural-compare@1.4.0: {}
@@ -7260,9 +7277,9 @@ snapshots:
     dependencies:
       lower-case: 1.1.4
 
-  node-abi@3.73.0:
+  node-abi@3.74.0:
     dependencies:
-      semver: 7.6.3
+      semver: 7.7.1
     optional: true
 
   node-domexception@1.0.0: {}
@@ -7349,7 +7366,7 @@ snapshots:
       '@octokit/request-error': 5.1.0
       '@octokit/types': 12.6.0
 
-  ohash@1.1.4: {}
+  ohash@1.1.6: {}
 
   once@1.4.0:
     dependencies:
@@ -7540,15 +7557,15 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  prebuild-install@7.1.2:
+  prebuild-install@7.1.3:
     dependencies:
       detect-libc: 2.0.3
       expand-template: 2.0.3
       github-from-package: 0.0.0
       minimist: 1.2.8
       mkdirp-classic: 0.5.3
-      napi-build-utils: 1.0.2
-      node-abi: 3.73.0
+      napi-build-utils: 2.0.0
+      node-abi: 3.74.0
       pump: 3.0.2
       rc: 1.2.8
       simple-get: 4.0.1
@@ -7768,6 +7785,9 @@ snapshots:
   semver@7.6.2: {}
 
   semver@7.6.3: {}
+
+  semver@7.7.1:
+    optional: true
 
   sentence-case@2.1.1:
     dependencies:
@@ -8233,7 +8253,7 @@ snapshots:
 
   typescript@5.7.2: {}
 
-  ufo@1.5.4: {}
+  ufo@1.6.1: {}
 
   uglify-js@3.19.3:
     optional: true
@@ -8256,9 +8276,9 @@ snapshots:
   unenv-nightly@2.0.0-20241204-140205-a5d5190:
     dependencies:
       defu: 6.1.4
-      ohash: 1.1.4
+      ohash: 1.1.6
       pathe: 1.1.2
-      ufo: 1.5.4
+      ufo: 1.6.1
 
   universal-github-app-jwt@1.2.0:
     dependencies:
